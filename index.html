@@ -226,37 +226,37 @@ section h4 {
 </div>
 
 <!-- نموذج الطلب -->
-<form 
-       
-       action="http://usebasin.com/f/d908c7a81323"
-       method="POST">
+<form action="http://usebasin.com/f/d908c7a81323" method="POST">
+  <div class="container mt-5 bg-white p-4 rounded shadow" id="orderForm">
+    <h4 class="mb-3">📋 نموذج الطلب</h4>
 
-<div class="container mt-5 bg-white p-4 rounded shadow" id="orderForm">
-  <h4 class="mb-3">📋 نموذج الطلب</h4>
- 
     <div class="mb-3">
       <label for="product" class="form-label">اسم المنتج</label>
-      <input type="text" class="form-control" id="product" placeholder="مثال: الحقيبة الأمريكية" required>
+      <input type="text" class="form-control" id="product" name="product" placeholder="مثال: الحقيبة الأمريكية" required>
     </div>
+
     <div class="mb-3">
       <label for="name" class="form-label">الاسم الكامل</label>
-      <input type="text" class="form-control" id="name" placeholder="أدخل اسمك" required>
+      <input type="text" class="form-control" id="name" name="name" placeholder="أدخل اسمك" required>
     </div>
+
     <div class="mb-3">
       <label for="phone" class="form-label">رقم الهاتف</label>
-      <input type="tel" class="form-control" id="phone" placeholder="مثال: 0555 55 55 55" required>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder="مثال: 0555 55 55 55" required>
     </div>
+
     <div class="mb-3">
       <label for="wilaya" class="form-label">الولاية</label>
-      <input type="text" class="form-control" id="wilaya" placeholder="مثال: الجزائر العاصمة" required>
+      <input type="text" class="form-control" id="wilaya" name="wilaya" placeholder="مثال: الجزائر العاصمة" required>
     </div>
+
     <div class="mb-3">
       <label for="address" class="form-label">العنوان الكامل</label>
-      <textarea class="form-control" id="address" rows="3" placeholder="أدخل العنوان بالتفصيل" required></textarea>
+      <textarea class="form-control" id="address" name="address" rows="3" placeholder="أدخل العنوان بالتفصيل" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary"> تأكيد الطلب</button>
 
-</div>
+    <button type="submit" class="btn btn-primary"> تأكيد الطلب</button>
+  </div>
 </form>
 
 <!-- معلومات إضافية -->
