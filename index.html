@@ -153,17 +153,18 @@ section h4 {
         <span class="navbar-toggler-icon"></span>
         <span class="navbar-toggler-icon"></span>
       </button>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-            <a class="nav-link" href="#" onclick="loadPage('home')">الصفحة الرئيسية</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" onclick="loadPage('categories')">التصنيفات</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" onclick="loadPage('contact')">اتصل بنا</a>
-        </li>
-    </ul>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">الصفحة الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">التصنيفات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">اتصل بنا</a>
+          </li>
+        </ul>
 
         <form class="d-flex">
           <input class="form-control me-2 search-bar" type="search" placeholder="ابحث عن منتج" aria-label="بحث">
@@ -464,22 +465,6 @@ section h4 {
 
   <script>
     
-    function loadPage(page) {
-    let contentDiv = document.getElementById("page-content");
-
-    let pages = {
-        "home": "<h2>الصفحة الرئيسية</h2><p>هنا تجد أحدث العروض والمنتجات!</p>",
-        "categories": "<h2>التصنيفات</h2><p>استعرض كافة التصنيفات المتاحة.</p>",
-        "contact": "<h2>اتصل بنا</h2><p>يمكنك التواصل معنا عبر البريد الإلكتروني أو الهاتف.</p>"
-    };
-
-    contentDiv.innerHTML = pages[page] || "<h2>صفحة غير موجودة</h2>";
-}
-
-</script>
-
-  <script>
-    
     function showSection(id) {
       // إخفاء جميع الأقسام أولاً
       document.querySelectorAll('.hidden-section').forEach(section => {
@@ -493,8 +478,8 @@ section h4 {
         target.scrollIntoView({ behavior: 'smooth' });
       }
     }
-</script>
-<script>
+  </script>
+  <script>
 
 // فتح وإغلاق القائمة عند الضغط على زر التبديل
 document.addEventListener('DOMContentLoaded', function () {
@@ -526,7 +511,7 @@ document.querySelectorAll('.nav-link').forEach(function (link) {
   });
 });
 
-</script>
+  </script>
   
 
 <!-- Bootstrap JS -->
