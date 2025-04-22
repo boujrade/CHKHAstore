@@ -10,7 +10,9 @@
   <!-- Bootstrap RTL CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
 
-
+  html {
+    scroll-behavior: smooth;
+  }
 
   <style>
 
@@ -19,12 +21,12 @@ body { font-family: 'Tajawal', sans-serif; }
     .navbar { background-color: #d3eaf0; }
     .navbar-brand { font-weight: bold; color: white; }
     .nav-link { color: white; font-size: 1.1rem; }
-    .navbar-toggler-icon { background-color: rgb(247, 247, 247); border-radius: 3px; width: 30px; height: 4px; margin: 4px 0; }
+    .navbar-toggler-icon { background-color: rgb(255, 255, 255); border-radius: 3px; width: 30px; height: 4px; margin: 4px 0; }
     .search-bar { border-radius: 20px; }
 
 body {
   font-family: 'Tajawal', sans-serif;
-  background-color: #f5f7fa;
+  background-color: #fcf1f1;
   color: #333;
   margin: 0;
   padding: 0;
@@ -145,23 +147,24 @@ section h4 {
        
         مرحبًا بك في متجرك
       </a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
         <span class="navbar-toggler-icon"></span>
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#">الصفحة الرئيسية</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">التصنيفات</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">اتصل بنا</a>
-          </li>
-        </ul>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="loadPage('home')">الصفحة الرئيسية</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="loadPage('categories')">التصنيفات</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="loadPage('contact')">اتصل بنا</a>
+        </li>
+    </ul>
+
         <form class="d-flex">
           <input class="form-control me-2 search-bar" type="search" placeholder="ابحث عن منتج" aria-label="بحث">
           <button class="btn btn-outline-light" type="submit">بحث</button>
@@ -170,6 +173,7 @@ section h4 {
     </div>
   </nav>
 
+  <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 600px;" alt="شعار المتجر"><br>
 <!-- قسم المنتجات -->
 <div class="container py-4">
   <h3 class="mb-4">جميع المنتجات</h3>
@@ -231,10 +235,10 @@ section h4 {
       </div>
     </div>
   </div>
-</div>
+</div><br>
 
 <!-- نموذج الطلب -->
-<form action="http://usebasin.com/f/d908c7a81323" method="POST">
+<form action="https://usebasin.com/f/d908c7a81323" method="POST">
   <div class="container mt-5 bg-white p-4 rounded shadow" id="orderForm">
     <h4 class="mb-3">📋 نموذج الطلب</h4>
 
@@ -265,29 +269,35 @@ section h4 {
 
     <button type="submit" class="btn btn-primary"> تأكيد الطلب</button>
   </div>
-</form>
+</form><br>
 
+
+
+
+<img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 600px;" alt="شعار المتجر"><br>
 <!-- معلومات إضافية -->
 <nav style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
     <ul style="list-style: none; padding: 0; text-align: center;">
       <!-- روابط التنقل -->
       <li style="margin-bottom: 10px;">
-        <a href="#privacy" onclick="showSection('privacy')" style="text-decoration: none; color: #0048ff; font-size: 1.2rem;">سياسة الخصوصية</a>
+        <a href="#privacy" onclick="showSection('privacy')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">سياسة الخصوصية</a>
       </li>
       <li style="margin-bottom: 10px;">
-        <a href="#contact" onclick="showSection('contact')" style="text-decoration: none; color: #0048ff; font-size: 1.2rem;">اتصل بنا</a>
+        <a href="#contact" onclick="showSection('contact')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">اتصل بنا</a>
       </li>
       <li style="margin-bottom: 10px;">
-        <a href="#faq" onclick="showSection('faq')" style="text-decoration: none; color: #0048ff; font-size: 1.2rem;">الأسئلة المتكررة</a>
+        <a href="#faq" onclick="showSection('faq')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">الأسئلة المتكررة</a>
       </li>
       <li style="margin-bottom: 10px;">
-        <a href="#about" onclick="showSection('about')" style="text-decoration: none; color: #0048ff; font-size: 1.2rem;">عن المتجر</a>
+        <a href="#about" onclick="showSection('about')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">عن المتجر</a>
       </li>
       <li style="margin-bottom: 10px;">
-        <a href="#payment" onclick="showSection('payment')" style="text-decoration: none; color: #0048ff; font-size: 1.2rem;">طرق الدفع</a>
+        <a href="#payment" onclick="showSection('payment')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">طرق الدفع</a>
       </li>
+         
+  
       <li style="margin-bottom: 10px;">
-        <a href="#shipping" onclick="showSection('shipping')" style="text-decoration: none; color: #0048ff; font-size: 1.2rem;">الشحن والتسليم</a>
+        <a href="#shipping" onclick="showSection('shipping')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">الشحن والتسليم</a>
       </li>
     </ul>
   </nav>
@@ -296,32 +306,177 @@ section h4 {
   <section id="privacy" class="hidden-section">
     <h4>🔒 سياسة الخصوصية</h4>
     <p>هنا توضع تفاصيل سياسة الخصوصية...</p>
+    <div id="privacy-policy" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #672f80;">🛡️ سياسة الخصوصية</h2>
+      <p>نحن في <strong>chikha store </strong> نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. توضح هذه السياسة كيف نجمع ونستخدم ونحفظ المعلومات التي تقدمها لنا عند استخدامك لموقعنا.</p>
+    
+      <h3> المعلومات التي نجمعها</h3>
+      <p>عند زيارتك لمتجرنا أو قيامك بالطلب، قد نقوم بجمع المعلومات التالية:</p>
+      <ul>
+        <li>الاسم الكامل</li>
+        <li>عنوان البريد الإلكتروني</li>
+        <li>رقم الهاتف</li>
+        <li>عنوان الشحن والفوترة</li>
+        <li>تفاصيل الطلبات والمنتجات</li>
+        <li>معلومات الدفع (لا يتم تخزين بيانات البطاقة الائتمانية مباشرة لدينا، بل تتم معالجتها عبر بوابات دفع آمنة)</li>
+      </ul>
+    
+      <h3> كيفية استخدام المعلومات</h3>
+      <p>نستخدم بياناتك من أجل:</p>
+      <ul>
+        <li>معالجة طلبات الشراء وتوصيل المنتجات</li>
+        <li>التواصل معك بشأن الطلبات أو الاستفسارات</li>
+        <li>إرسال عروض أو تحديثات (إذا وافقت على ذلك)</li>
+        <li>تحسين تجربة المستخدم وتطوير الموقع</li>
+      </ul>
+    
+      <h3> مشاركة البيانات</h3>
+      <p>نحن لا نشارك معلوماتك الشخصية مع أطراف خارجية إلا في الحالات التالية:</p>
+      <ul>
+        <li>شركات الشحن لتوصيل الطلبات</li>
+        <li>بوابات الدفع الآمنة لإتمام عملية الدفع</li>
+        <li>إذا تطلب الأمر ذلك قانونيًا</li>
+      </ul>
+    
+      <h3> حماية المعلومات</h3>
+      <p>نلتزم بتطبيق معايير الأمان المناسبة لحماية بياناتك من الوصول غير المصرح به أو التعديل أو الكشف أو الإتلاف.</p>
+    
+      <h3> حقوقك</h3>
+      <p>يحق لك:</p>
+      <ul>
+        <li>طلب معرفة البيانات التي نحتفظ بها عنك</li>
+        <li>طلب تعديل أو حذف بياناتك</li>
+        <li>إلغاء الاشتراك من الرسائل التسويقية في أي وقت</li>
+      </ul>
+    </div>
   </section>
 
   <section id="contact" class="hidden-section">
     <h4>📞 اتصل بنا</h4>
     <p>معلومات التواصل...</p>
+    <h3>7. الاتصال بنا</h3>
+<p>إذا كان لديك أي أسئلة حول سياسة الخصوصية، يمكنك التواصل معنا عبر:</p>
+<ul>
+  <li>📧 البريد الإلكتروني: <a href="mailto:example@email.com">chikhastore@email.com</a></li>
+  <li>📞 رقم الهاتف: <a href="tel:رقمك-هنا">0552973177</a></li>
+</ul>
+
   </section>
 
   <section id="faq" class="hidden-section">
     <h4>❓ الأسئلة المتكررة</h4>
     <p>أجوبة على الأسئلة الشائعة...</p>
+    <div id="faq" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #0c0b0c;">❓ الأسئلة المتكررة</h2>
+    
+      <h4> كيف يمكنني تقديم طلب؟</h4>
+      <p>يمكنك تصفح المنتجات وإضافتها إلى سلة التسوق، ثم متابعة عملية الدفع باتباع التعليمات على الشاشة.</p>
+    
+      <h4> ما هي طرق الدفع المتاحة؟</h4>
+      <p>نقبل الدفع عند الاستلام، التحويل البنكي، وبطاقات الائتمان، بالإضافة إلى باي بال.</p>
+    
+      <h4> كم يستغرق توصيل الطلب؟</h4>
+      <p>عادةً ما يتم توصيل الطلبات خلال 3 إلى 5 أيام كحدأقصى </p>
+    
+      <h4> هل يمكنني إرجاع أو استبدال المنتج؟</h4>
+      <p>نعم، يمكنك إرجاع المنتج خلال24 ساعة من استلامه إذا كان به عطل أو في غير حالته الأصلية، طبقًا لسياسة الاسترجاع.</p>
+    
+      <h4> كيف أتواصل مع خدمة العملاء؟</h4>
+      <p>يمكنك التواصل معنا عبر البريد الإلكتروني أو رقم الهاتف المذكور في قسم <a href="#privacy-policy">سياسة الخصوصية</a>.</p>
+    </div>
   </section>
 
   <section id="about" class="hidden-section">
     <h4>🏪 عن المتجر</h4>
     <p>معلومات عن المتجر...</p>
+    <div id="about-store" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #672f80;">🏬 معلومات حول المتجر</h2>
+      <p>
+        مرحبًا بك في <strong> chikh store </strong>، وجهتك الأولى للتسوق الإلكتروني حيث الجودة والموثوقية.  
+        نسعى لتقديم تجربة تسوق مريحة وآمنة، مع مجموعة مختارة بعناية من المنتجات التي تناسب جميع الأذواق والاحتياجات.
+      </p>
+    
+      <p>
+         من حين الى حين نعمل على تطوير خدماتنا باستمرار لضمان رضا عملائنا الكرام
+      </p>
+    
+      <p>
+        رؤيتنا هي توفير منتجات عالية الجودة بأسعار تنافسية، مع خدمة عملاء متميزة وشحن سريع إلى جميع أنحاء الوطن في 58 ولاية.
+      </p>
+    
+      <p>
+        شكراً لثقتك بـ <strong> chikha store </strong> 💜
+      </p>
+    </div>
   </section>
 
   <section id="payment" class="hidden-section">
     <h4>💳 طرق الدفع</h4>
     <p>تفاصيل طرق الدفع المقبولة...</p>
+     <!-- قسم طرق الدفع -->
+  <div id="payment" class="section">
+    <h2>طرق الدفع</h2>
+    <p>نقبل عدة وسائل للدفع، منها:</p>
+    <ul>
+      <li>الدفع نقدًا عند الاستلام</li>
+      <li>التحويل البنكي</li>
+      <li>الدفع عبر باي بال</li>
+      <li>بطاقات الائتمان (Visa / MasterCard)</li>
+    </ul>
+  </div>
   </section>
 
   <section id="shipping" class="hidden-section">
     <h4>🚚 الشحن والتسليم</h4>
     <p>تفاصيل الشحن ومواعيد التسليم...</p>
+    <div id="shipping" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #672f80;">🚚 عن الشحن والتسليم</h2>
+    
+      <p>
+        نحن في <strong>chikha store</strong> نسعى لتوصيل طلباتكم بأسرع وقت ممكن وبأفضل جودة خدمة.
+      </p>
+    
+      <h4>مدة التوصيل:</h4>
+      <p>
+        - داخل المدينة: من 1 إلى 2 يوم عمل  <BR>
+        - باقي المناطق: من 3 إلى 5 أيام عمل <BR> 
+        - التوصيل الدولي (إن وجد): من 7 إلى 14 يوم عمل
+      </p>
+    
+      <h4>شركات الشحن المعتمدة:</h4>
+      <p>
+        نتعامل مع أفضل شركات الشحن Yalidine ,ZR expresse لضمان وصول الطلب بأمان وفي الوقت المحدد.
+      </p>
+    
+      <h4>رسوم الشحن:</h4>
+      <p>
+        - الشحن مجاني للطلبات التي تتجاوز 3000 DA
+        - للطلبات الأقل سعراً رسوم الشحن متغيرة حسب مكان تواجد الزبون
+      </p>
+    
+      <h4>ملاحظات:</h4>
+      <ul>
+        <li>يرجى التأكد من إدخال عنوان الشحن بشكل صحيح لتجنب التأخير.</li>
+        <li>في حال وجود أي مشكلة في التوصيل، يرجى التواصل معنا عبر قسم <a href="#privacy-policy">الاتصال بنا</a>.</li>
+      </ul>
+    </div>
   </section>
+
+  <script>
+    
+    function loadPage(page) {
+    let contentDiv = document.getElementById("page-content");
+
+    let pages = {
+        "home": "<h2>الصفحة الرئيسية</h2><p>هنا تجد أحدث العروض والمنتجات!</p>",
+        "categories": "<h2>التصنيفات</h2><p>استعرض كافة التصنيفات المتاحة.</p>",
+        "contact": "<h2>اتصل بنا</h2><p>يمكنك التواصل معنا عبر البريد الإلكتروني أو الهاتف.</p>"
+    };
+
+    contentDiv.innerHTML = pages[page] || "<h2>صفحة غير موجودة</h2>";
+}
+
+</script>
 
   <script>
     
@@ -338,8 +493,8 @@ section h4 {
         target.scrollIntoView({ behavior: 'smooth' });
       }
     }
-  </script>
-  <script>
+</script>
+<script>
 
 // فتح وإغلاق القائمة عند الضغط على زر التبديل
 document.addEventListener('DOMContentLoaded', function () {
@@ -371,7 +526,7 @@ document.querySelectorAll('.nav-link').forEach(function (link) {
   });
 });
 
-  </script>
+</script>
   
 
 <!-- Bootstrap JS -->
