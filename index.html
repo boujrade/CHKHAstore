@@ -13,11 +13,11 @@
  
   <style>
 
-img {
-    max-width: 100%; /* لضمان عدم خروج الصورة عن عرض الشاشة */
-    height: auto; /* للحفاظ على تناسب الأبعاد */
-    display: block; /* لجعل الصورة عنصرًا بلوكيًا ليتم التحكم به بسهولة */
-    margin: 0 auto; /* لتوسيط الصورة في الشاشة */
+@media (max-width: 768px) {
+    img {
+        max-width: 80%; /* تقليل الحجم قليلاً على الشاشات الصغيرة */
+        margin-right: 0; /* إزالة الإزاحة الجانبية */
+    }
 }
 
 body { font-family: 'Tajawal', sans-serif; }
