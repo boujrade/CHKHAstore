@@ -142,6 +142,27 @@
       background-color: var(--hover-input-bg);
     }
   
+    a {
+  text-decoration: none;
+  color: #672f80;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #672f80;
+  transition: 0.3s;
+}
+a:hover::after {
+  background-color: #9158b6; /* تغيير اللون عند التحويم */
+}
+
     /* الأقسام المخفية */
  section.hidden-section {
   display: none;
@@ -348,7 +369,6 @@
       <p>عند زيارتك لمتجرنا أو قيامك بالطلب، قد نقوم بجمع المعلومات التالية:</p>
       <ul>
         <li>الاسم الكامل</li>
-        <li>عنوان البريد الإلكتروني</li>
         <li>رقم الهاتف</li>
         <li>عنوان الشحن والفوترة</li>
         <li>تفاصيل الطلبات والمنتجات</li>
