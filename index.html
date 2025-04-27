@@ -47,11 +47,7 @@
   color: #f8d210; /* تغيير اللون عند التحويم */
   text-decoration: underline; /* إضافة خط تحت الرابط */
 }
-   /* إزالة السهم الافتراضي */
-.navbar .dropdown-toggle::after {
-  display: none;
-}
-
+   
 
 /* تحسين لون العناصر داخل القائمة */
 .dropdown-item {
@@ -227,29 +223,21 @@
         مرحبًا بك في متجرك
       </a>
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" onclick="loadPage('home')">الصفحة الرئيسية</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="loadPage('categories')">التصنيفات</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="loadPage('contact')">اتصل بنا</a></li>
-                  
-                </ul>
-              </li>
-            </ul>
-          </div>
+      <nav>
+        <div class="logo">موقعي</div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+        <ul class="menu" id="menu">
+          <li><a href="#">الرئيسية</a></li>
+          <li><a href="#">من نحن</a></li>
+          <li><a href="#">خدماتنا</a></li>
+          <li><a href="#">تواصل معنا</a></li>
+        </ul>
       </nav>
-
+    
         <form class="d-flex">
           <input class="form-control me-2 search-bar" type="search" placeholder="ابحث عن منتج" aria-label="بحث">
          
@@ -557,69 +545,73 @@
     </div>
   </section>
 
-<script>
-  function loadPage(page) {
-    let contentDiv = document.getElementById("page-content");
-
-    // جلب المحتوى من ملفات خارجية
-    fetch(`${page}.html`)
-        .then(response => response.text())
-        .then(data => contentDiv.innerHTML = data)
-        .catch(() => contentDiv.innerHTML = "<h2>صفحة غير موجودة</h2>");
-}
-</script>
-
   <script>
-    function showSection(id) {
-      // إخفاء جميع الأقسام أولاً
-      document.querySelectorAll('.hidden-section').forEach(section => {
-        section.style.display = 'none';
-      });
-
-      // إظهار القسم المطلوب
-      const target = document.getElementById(id);
-      if (target) {
-        target.style.display = 'block';
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
     }
-  </script>
-  <script>
 
-// فتح وإغلاق القائمة عند الضغط على زر التبديل
-document.addEventListener('DOMContentLoaded', function () {
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarCollapse = document.querySelector('#navbarNav');
-
-  navbarToggler.addEventListener('click', function () {
-    navbarCollapse.classList.toggle('show');
-  });
-});
-
-// وظيفة البحث عن منتج
-document.querySelector('.search-bar').addEventListener('keypress', function (event) {
-  if (event.key === 'Enter') {
-    event.preventDefault(); // منع إعادة تحميل الصفحة
-    const query = event.target.value.trim(); // النص المدخل
-    if (query) {
-      alert(`تم البحث عن المنتج: ${query}`); // عرض رسالة البحث
-    } else {
-      alert('يرجى إدخال اسم المنتج للبحث!');
-    }
+    function loadPage(page) {
+      let contentDiv = document.getElementById("page-content");
+  
+      // جلب المحتوى من ملفات خارجية
+      fetch(`${page}.html`)
+          .then(response => response.text())
+          .then(data => contentDiv.innerHTML = data)
+          .catch(() => contentDiv.innerHTML = "<h2>صفحة غير موجودة</h2>");
   }
-});
-
-// تأثير بسيط عند الضغط على الروابط
-document.querySelectorAll('.nav-link').forEach(function (link) {
-  link.addEventListener('click', function () {
-    alert(`تم الانتقال إلى: ${link.textContent}`);
-  });
-});
-
   </script>
   
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <script>
+      function showSection(id) {
+        // إخفاء جميع الأقسام أولاً
+        document.querySelectorAll('.hidden-section').forEach(section => {
+          section.style.display = 'none';
+        });
+  
+        // إظهار القسم المطلوب
+        const target = document.getElementById(id);
+        if (target) {
+          target.style.display = 'block';
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    </script>
+    <script>
+  
+  // فتح وإغلاق القائمة عند الضغط على زر التبديل
+  document.addEventListener('DOMContentLoaded', function () {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('#navbarNav');
+  
+    navbarToggler.addEventListener('click', function () {
+      navbarCollapse.classList.toggle('show');
+    });
+  });
+  
+  // وظيفة البحث عن منتج
+  document.querySelector('.search-bar').addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // منع إعادة تحميل الصفحة
+      const query = event.target.value.trim(); // النص المدخل
+      if (query) {
+        alert(`تم البحث عن المنتج: ${query}`); // عرض رسالة البحث
+      } else {
+        alert('يرجى إدخال اسم المنتج للبحث!');
+      }
+    }
+  });
+  
+  // تأثير بسيط عند الضغط على الروابط
+  document.querySelectorAll('.nav-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      alert(`تم الانتقال إلى: ${link.textContent}`);
+    });
+  });
+  
+    </script>
+    
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
