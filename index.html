@@ -89,11 +89,11 @@
 body {
       margin: 0;
       font-family: 'Tajawal', sans-serif;
-      background: #f0f0f0;
+      background: #f8f8f8;
     }
 
     nav {
-      background-color: #007BFF;
+      background-color: #5b5e61;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
@@ -140,6 +140,46 @@ body {
       transition: 0.4s;
     }
 
+    /* القائمة الجانبية */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px; /* مخفية خارج الشاشة */
+      width: 250px;
+      height: 100%;
+      background-color: #007BFF;
+      padding-top: 60px; /* عشان ما تغطي النافبار */
+      transition: left 0.3s ease;
+      z-index: 200;
+    }
+
+    .sidebar.active {
+      left: 0; /* تظهر */
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      padding: 15px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: block;
+    }
+
+    .sidebar ul li a:hover {
+      color: #ffd700;
+    }
+
+
     /* القائمة المنبثقة */
     .menu-popup {
       display: none;
@@ -147,7 +187,7 @@ body {
       position: absolute;
       top: 60px;
       right: 20px;
-      background-color: #007BFF;
+      background-color: #bfcace;
       width: 200px;
       border-radius: 8px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
