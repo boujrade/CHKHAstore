@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+  
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <title>المنتجات</title>
+  
+  <!-- Bootstrap RTL CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+  <title>صورة محددة متجاوبة</title>
+
+
+  <style>
+    /* تعريف المتغيرات الأساسية للألوان */
+    :root {
+      --primary-color: #1a202c;         /* لون أساسي داكن */
+      --secondary-color: #2d3748;       /* لون تبايني أغمق */
+      --accent-color: #38b2ac;          /* لون تفاعلي/لمسة طازجة */
+      --background-color: #f7fafc;      /* خلفية فاتحة نظيفة */
+      --card-bg: #ffffff;               /* لون البطاقات */
+      --input-bg: #edf2f7;              /* خلفية الحقول */
+      --hover-input-bg: #e2e8f0;         /* خلفية الحقول عند التركيز */
+    }
+  
+    /* الإعدادات العامة للصفحة */
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--background-color);
+      color: var(--primary-color);
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+  
+    
+    /* شريط التنقل */
+    .navbar {
+  background-color: #5b5e5f;
+  }
+  
+ 
+
+.nav-link:hover {
+  color: #f8d210; /* تغيير اللون عند التحويم */
+  text-decoration: underline; /* إضافة خط تحت الرابط */
+}
+   
+
+/* تحسين لون العناصر داخل القائمة */
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #f8d210; /* تأثير عند التحويم */
+}
+.navbar-toggler {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none !important;
+}
+
+.navbar-toggler:focus, 
+.navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+  background-color: #eee6e6;
+  border-radius: 2px;
+  width: 30px;
+  height: 4px;
+  display: block;
+  margin: 4px 0;
+}
+
+.dropdown-item {
+  color: rgb(114, 105, 105);
+}
+
+.dropdown-item:hover {
+  background-color: #f8d210;
+}
+    
+    /* شريط البحث */
+    .search-bar {
+      border-radius: 20px;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      background-color: var(--hover-input-bg);
+    }
+  
+    /* البطاقات */
+    .card {
+      border: none;
+      border-radius: 20px;
+      background: var(--card-bg);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+    .product-img {
+      height: 220px;
+      object-fit: cover;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  
+    /* الأسعار */
+    .price {
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .old-price {
+      color: #a0aec0;
+      text-decoration: line-through;
+    }
+    .badge-sale {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #f6ad55;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+    }
+  
+    /* زر الطلب */
+    .btn-success {
+      background-color: var(--accent-color);
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      padding: 0.55rem 1.25rem;
+      transition: background-color 0.3s ease;
+      color: #fff;
+    }
+    .btn-success:hover {
+      background-color: #319795;
+    }
+  
+    /* نموذج الطلب */
+    #orderForm {
+      border-radius: 20px;
+      max-width: 600px;
+      background: var(--card-bg);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      margin: 2rem auto;
+    }
+    #orderForm .form-control,
+    #orderForm textarea {
+      border: none;
+      border-radius: 30px;
+      background-color: var(--input-bg);
+      padding: 0.75rem 1rem;
+      transition: background-color 0.3s ease;
+    }
+    #orderForm .form-control:focus,
+    #orderForm textarea:focus {
+      background-color: var(--hover-input-bg);
+    }
+  
+
+    /* الأقسام المخفية */
+ section.hidden-section {
+  display: none;
+  background-color: #ffffff;
+  padding: 30px 20px;
+  margin: 30px auto;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+ }
+
+ section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #af4dc7;
+ }
+    /* الأجهزة الصغيرة */
+    @media (max-width: 768px) {
+      .card .card-body {
+        padding: 1rem 0.75rem;
+      }
+      .product-img {
+        height: 180px;
+      }
+      h3, h4 {
+        font-size: 1rem;
+      }
+    }
+
+    #special-image {         /*صورة محددة متجاوبة*/
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+
+  </style>
+</head>
+<body class="bg-light">
+
+ <!-- شريط التنقل -->
+ <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="images/html.jjj.jpg" style="height: 60px; max-height: 8vh; margin-left: 8px;" alt="شعار المتجر">
+       
+        مرحبًا بك في متجرك
+      </a>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">موقعي</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                  الصفحات
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" onclick="loadPage('home')">الصفحة الرئيسية</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="loadPage('categories')">التصنيفات</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="loadPage('contact')">اتصل بنا</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+        <form class="d-flex">
+          <input class="form-control me-2 search-bar" type="search" placeholder="ابحث عن منتج" aria-label="بحث">
+         
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"><br>
+
+
+  <img id="special-image" src="images/special-image.jpg" alt="صورة محددة متجاوبة">
+  
+
+
+<!-- قسم المنتجات -->
+<div class="container py-4">
+  <h3 class="mb-4">جميع المنتجات</h3>
+  <div class="row g-4">
+
+    <!-- منتج 1 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card position-relative">
+        <span class="badge-sale">En vente</span>
+        <img src="images/html.ppp.jpg" class="card-img-top product-img" alt="حقيبة">
+        <div class="card-body text-center">
+          <p class="card-title">الحقيبة الأمريكية الفخمة</p>
+          <p><span class="old-price">DA 3,900.00</span></p>
+          <p class="price">DA 2,400.00 DZD</p>
+          <a href="#orderForm" class="btn btn-success mt-2">📦 اضغط هنا لطلب</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- منتج 2 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card position-relative">
+        <span class="badge-sale">En vente</span>
+        <img src="images/html.png.jpg" class="card-img-top product-img" alt="حقيبة خصر">
+        <div class="card-body text-center">
+          <p class="card-title">حقيبة الخصر للرجال والنساء</p>
+          <p><span class="old-price">DA 2,200.00</span></p>
+          <p class="price">DA 1,600.00 DZD</p>
+          <a href="#orderForm" class="btn btn-success mt-2">📦 اضغط هنا لطلب</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- منتج 3 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card position-relative">
+        <span class="badge-sale">En vente</span>
+
+        <img src="images/html.pgg.jpg" class="card-img-top product-img" alt="آلة خياطة">
+        <div class="card-body text-center">
+          <p class="card-title">آلة خياطة محمولة</p>
+          <p class="price">DA 1,200.00 DZD</p>
+          <a href="#orderForm" class="btn btn-success mt-2">📦 اضغط هنا لطلب</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- منتج 4 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card position-relative">
+        <span class="badge-sale">En vente</span>
+
+        <img src="images/html.ggj.jpg" class="card-img-top product-img" alt="راديو إسلامي">
+        <div class="card-body text-center">
+          <p class="card-title">الجهاز الإسلامي الناطق</p>
+          <p class="price">DA 1,800.00 DZD</p>
+          <a href="#orderForm" class="btn btn-success mt-2">📦 اضغط هنا لطلب</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<!-- نموذج الطلب -->
+<form action="https://usebasin.com/f/d908c7a81323" method="POST">
+  <div class="container mt-5 bg-white p-4 rounded shadow" id="orderForm">
+    <h4 class="mb-3">📋 نموذج الطلب</h4>
+
+    <div class="mb-3">
+      <label for="product" class="form-label">اسم المنتج</label>
+      <input type="text" class="form-control" id="product" name="product" placeholder="مثال: الحقيبة الأمريكية" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">الاسم الكامل</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="أدخل اسمك" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">رقم الهاتف</label>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder=" ادخل رقمك الهاتف" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="wilaya" class="form-label">الولاية</label>
+      <input type="text" class="form-control" id="wilaya" name="wilaya" placeholder=" ولايتك"required>
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">العنوان الكامل</label>
+      <textarea class="form-control" id="address"  placeholder="أدخل العنوان بالتفصيل" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">الكمية المطلوبة</label>
+      <textarea class="form-control" id="message" name="message" placeholder=" أكتب العدد"required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary"> تأكيد الطلب</button>
+  </div>
+</form><br>
+
+
+
+
+<img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"><br>
+<!-- معلومات إضافية -->
+<nav style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
+    <ul style="list-style: none; padding: 0; text-align: center;">
+      <!-- روابط التنقل -->
+      <li style="margin-bottom: 10px;">
+        <a href="#privacy" onclick="showSection('privacy')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">سياسة الخصوصية</a>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <a href="#contact" onclick="showSection('contact')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">اتصل بنا</a>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <a href="#faq" onclick="showSection('faq')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">الأسئلة المتكررة</a>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <a href="#about" onclick="showSection('about')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">عن المتجر</a>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <a href="#payment" onclick="showSection('payment')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">طرق الدفع</a>
+      </li>
+         
+  
+      <li style="margin-bottom: 10px;">
+        <a href="#shipping" onclick="showSection('shipping')" style="text-decoration: none; color: #672f80; font-size: 1.5rem;">الشحن والتسليم</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- الأقسام المخفية -->
+  <section id="privacy" class="hidden-section">
+    <h4>🔒 سياسة الخصوصية</h4>
+    <p>  تفاصيل سياسة الخصوصية...</p>
+    <div id="privacy-policy" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #672f80;">🛡️ سياسة الخصوصية</h2>
+      <p>نحن في <strong>chika store </strong> نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. توضح هذه السياسة كيف نجمع ونستخدم ونحفظ المعلومات التي تقدمها لنا عند استخدامك لموقعنا.</p>
+    
+      <h3> المعلومات التي نجمعها</h3>
+      <p>عند زيارتك لمتجرنا أو قيامك بالطلب، قد نقوم بجمع المعلومات التالية:</p>
+      <ul>
+        <li>الاسم الكامل</li>
+        <li>رقم الهاتف</li>
+        <li>عنوان الشحن والفوترة</li>
+        <li>تفاصيل الطلبات والمنتجات</li>
+        <li>معلومات الدفع (لا يتم تخزين بيانات البطاقة الائتمانية مباشرة لدينا، بل تتم معالجتها عبر بوابات دفع آمنة)</li>
+      </ul>
+    
+      <h3> كيفية استخدام المعلومات</h3>
+      <p>نستخدم بياناتك من أجل:</p>
+      <ul>
+        <li>معالجة طلبات الشراء وتوصيل المنتجات</li>
+        <li>التواصل معك بشأن الطلبات أو الاستفسارات</li>
+        <li>إرسال عروض أو تحديثات (إذا وافقت على ذلك)</li>
+        <li>تحسين تجربة المستخدم وتطوير الموقع</li>
+      </ul>
+    
+      <h3> مشاركة البيانات</h3>
+      <p>نحن لا نشارك معلوماتك الشخصية مع أطراف خارجية إلا في الحالات التالية:</p>
+      <ul>
+        <li>شركات الشحن لتوصيل الطلبات</li>
+        <li>بوابات الدفع الآمنة لإتمام عملية الدفع</li>
+        <li>إذا تطلب الأمر ذلك قانونيًا</li>
+      </ul>
+    
+      <h3> حماية المعلومات</h3>
+      <p>نلتزم بتطبيق معايير الأمان المناسبة لحماية بياناتك من الوصول غير المصرح به أو التعديل أو الكشف أو الإتلاف.</p>
+    
+      <h3> حقوقك</h3>
+      <p>يحق لك:</p>
+      <ul>
+        <li>طلب معرفة البيانات التي نحتفظ بها عنك</li>
+        <li>طلب تعديل أو حذف بياناتك</li>
+        <li>إلغاء الاشتراك من الرسائل التسويقية في أي وقت</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="hidden-section">
+    <h4>📞 اتصل بنا</h4>
+    <p>معلومات التواصل...</p>
+    <h3>7. الاتصال بنا</h3>
+<p>إذا كان لديك أي أسئلة حول سياسة الخصوصية، يمكنك التواصل معنا عبر:</p>
+<ul>
+  <li>📧 البريد الإلكتروني: <a href="mailto:example@email.com">chikhastore@gmail.com</a></li>
+  <li>📞 رقم الهاتف: <a href="tel:رقمك-هنا">0552973177</a></li>
+</ul>
+
+  </section>
+
+  <section id="faq" class="hidden-section">
+    <h4>❓ الأسئلة المتكررة</h4>
+    <p>أجوبة على الأسئلة الشائعة...</p>
+    <div id="faq" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #0c0b0c;">❓ الأسئلة المتكررة</h2>
+    
+      <h4> كيف يمكنني تقديم طلب؟</h4>
+      <p>يمكنك تصفح المنتجات وإضافتها إلى سلة التسوق، ثم متابعة عملية الدفع باتباع التعليمات على الشاشة.</p>
+    
+      <h4> ما هي طرق الدفع المتاحة؟</h4>
+      <p>نقبل الدفع عند الاستلام، التحويل البنكي، وبطاقات الائتمان، بالإضافة إلى باي بال.</p>
+    
+      <h4> كم يستغرق توصيل الطلب؟</h4>
+      <p>عادةً ما يتم توصيل الطلبات خلال 3 إلى 5 أيام كحدأقصى </p>
+    
+      <h4> هل يمكنني إرجاع أو استبدال المنتج؟</h4>
+      <p>نعم، يمكنك إرجاع المنتج خلال24 ساعة من استلامه إذا كان به عطل أو في غير حالته الأصلية، طبقًا لسياسة الاسترجاع.</p>
+    
+      <h4> كيف أتواصل مع خدمة العملاء؟</h4>
+      <p>يمكنك التواصل معنا عبر البريد الإلكتروني أو رقم الهاتف المذكور في قسم <a href="#privacy-policy">سياسة الخصوصية</a>.</p>
+    </div>
+  </section>
+
+  <section id="about" class="hidden-section">
+    <h4>🏪 عن المتجر</h4>
+    <p>معلومات عن المتجر...</p>
+    <div id="about-store" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #672f80;">🏬 معلومات حول المتجر</h2>
+      <p>
+        مرحبًا بك في <strong> chika store </strong>، وجهتك الأولى للتسوق الإلكتروني حيث الجودة والموثوقية.  
+        نسعى لتقديم تجربة تسوق مريحة وآمنة، مع مجموعة مختارة بعناية من المنتجات التي تناسب جميع الأذواق والاحتياجات.
+      </p>
+    
+      <p>
+         من حين الى حين نعمل على تطوير خدماتنا باستمرار لضمان رضا عملائنا الكرام
+      </p>
+    
+      <p>
+        رؤيتنا هي توفير منتجات عالية الجودة بأسعار تنافسية، مع خدمة عملاء متميزة وشحن سريع إلى جميع أنحاء الوطن في 58 ولاية.
+      </p>
+    
+      <p>
+        شكراً لثقتك بـ <strong> chika store </strong> 💜
+      </p>
+    </div>
+  </section>
+
+  <section id="payment" class="hidden-section">
+    <h4>💳 طرق الدفع</h4>
+    <p>تفاصيل طرق الدفع المقبولة...</p>
+     <!-- قسم طرق الدفع -->
+  <div id="payment" class="section">
+    <h2>طرق الدفع</h2>
+    <p>نقبل عدة وسائل للدفع، منها:</p>
+    <ul>
+      <li>الدفع نقدًا عند الاستلام</li>
+      <li>التحويل البنكي</li>
+      <li>الدفع عبر باي بال</li>
+      <li>بطاقات الائتمان (Visa / MasterCard)</li>
+    </ul>
+  </div>
+  </section>
+
+  <section id="shipping" class="hidden-section">
+    <h4>🚚 الشحن والتسليم</h4>
+    <p>تفاصيل الشحن ومواعيد التسليم...</p>
+    <div id="shipping" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #672f80;">🚚 عن الشحن والتسليم</h2>
+    
+      <p>
+        نحن في <strong>chika store</strong> نسعى لتوصيل طلباتكم بأسرع وقت ممكن وبأفضل جودة خدمة.
+      </p>
+    
+      <h4>مدة التوصيل:</h4>
+      <p>
+        - داخل المدينة: من 1 إلى 2 يوم <BR>
+        - باقي المناطق: من 3 إلى 5 أيام  <BR> 
+        - التوصيل الدولي (إن وجد): من 7 إلى 14 يوم 
+      </p>
+    
+      <h4>شركات الشحن المعتمدة:</h4>
+      <p>
+        نتعامل مع أفضل شركات الشحن  Yalidine ,  ZR expresse لضمان وصول الطلب بأمان وفي الوقت المحدد.
+      </p>
+    
+      <h4>رسوم الشحن:</h4>
+      <p>
+        - الشحن مجاني للطلبات التي تتجاوز 3000 DA
+        - للطلبات الأقل سعراً رسوم الشحن متغيرة حسب مكان تواجد الزبون
+      </p>
+    
+      <h4>ملاحظات:</h4>
+      <ul>
+        <li>يرجى التأكد من إدخال عنوان الشحن بشكل صحيح لتجنب التأخير.</li>
+        <li>في حال وجود أي مشكلة في التوصيل، يرجى التواصل معنا عبر قسم <a href="#privacy-policy">الاتصال بنا</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+ <!-- إضافة JavaScript و Bootstrap JS -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+ <script>
+   // دالة لتحميل المحتوى عند الضغط على الروابط
+   function loadPage(page) {
+     let contentArea = document.getElementById('contentArea');
+     if (page === 'home') {
+       contentArea.innerHTML = `
+         <h2>الصفحة الرئيسية</h2>
+         <p>مرحباً بك في الصفحة الرئيسية. هنا تجد أهم المعلومات عن الموقع.</p>
+       `;
+     } else if (page === 'categories') {
+       contentArea.innerHTML = `
+         <h2>التصنيفات</h2>
+         <p>هنا يمكنك استكشاف تصنيفات مختلفة لمنتجاتنا.</p>
+       `;
+     } else if (page === 'contact') {
+       contentArea.innerHTML = `
+         <h2>اتصل بنا</h2>
+         <p>إذا كان لديك أي استفسار، يمكنك الاتصال بنا عبر البريد الإلكتروني أو الهاتف.</p>
+       `;
+     }
+   }
+ </script>
+  <script>
+    function showSection(id) {
+      // إخفاء جميع الأقسام أولاً
+      document.querySelectorAll('.hidden-section').forEach(section => {
+        section.style.display = 'none';
+      });
+
+      // إظهار القسم المطلوب
+      const target = document.getElementById(id);
+      if (target) {
+        target.style.display = 'block';
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  <script>
+
+// فتح وإغلاق القائمة عند الضغط على زر التبديل
+document.addEventListener('DOMContentLoaded', function () {
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('#navbarNav');
+
+  navbarToggler.addEventListener('click', function () {
+    navbarCollapse.classList.toggle('show');
+  });
+});
+
+// وظيفة البحث عن منتج
+document.querySelector('.search-bar').addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // منع إعادة تحميل الصفحة
+    const query = event.target.value.trim(); // النص المدخل
+    if (query) {
+      alert(`تم البحث عن المنتج: ${query}`); // عرض رسالة البحث
+    } else {
+      alert('يرجى إدخال اسم المنتج للبحث!');
+    }
+  }
+});
+
+// تأثير بسيط عند الضغط على الروابط
+document.querySelectorAll('.nav-link').forEach(function (link) {
+  link.addEventListener('click', function () {
+    alert(`تم الانتقال إلى: ${link.textContent}`);
+  });
+});
+
+  </script>
+
+  <!-- السكربت داخل الصفحة -->
+  <script>
+    function loadPage(page) {
+      let contentArea = document.getElementById('contentArea');
+      
+      if (page === 'home') {
+        contentArea.innerHTML = `<h2>الصفحة الرئيسية</h2>`;
+        
+        fetch('data.json') // جلب البيانات من الملف المحلي
+          .then(response => response.json()) // تحويل الاستجابة إلى JSON
+          .then(data => {
+            contentArea.innerHTML += `
+              <p>${data.title}</p>
+              <p>${data.description}</p>
+            `;
+          })
+          .catch(error => {
+            contentArea.innerHTML += `<p>حدث خطأ في تحميل البيانات.</p>`;
+          });
+      }
+    }
+  </script>
+
+  <script>  
+   fetch('data.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('فشل في تحميل البيانات');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // إظهار البيانات في الصفحة
+    const contentArea = document.getElementById('contentArea');
+    contentArea.innerHTML = `
+      <h2>${data.title}</h2>
+      <p>${data.description}</p>
+    `;
+  })
+  .catch(error => {
+    const contentArea = document.getElementById('contentArea');
+    contentArea.innerHTML = `<p>حدث خطأ في تحميل البيانات: ${error}</p>`;
+  });
+  </script>
+  
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
