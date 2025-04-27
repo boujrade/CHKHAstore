@@ -86,6 +86,112 @@
 .dropdown-item:hover {
   background-color: #f8d210;
 }
+body {
+      margin: 0;
+      font-family: 'Tajawal', sans-serif;
+      background: #f0f0f0;
+    }
+
+    nav {
+      background-color: #007BFF;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .menu li a:hover {
+      color: #ffd700;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* القائمة المنبثقة */
+    .menu-popup {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #007BFF;
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      overflow: hidden;
+      z-index: 100;
+    }
+
+    .menu-popup.active {
+      display: flex;
+    }
+
+    .menu-popup li {
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .menu-popup li:last-child {
+      border-bottom: none;
+    }
+
+    @media (min-width: 769px) {
+      .hamburger {
+        display: none;
+      }
+
+      .menu {
+        display: flex;
+      }
+
+      .menu-popup {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
     
     /* شريط البحث */
     .search-bar {
@@ -224,7 +330,7 @@
       </a>
 
       <nav>
-        <div class="logo">موقعي</div>
+        
         <div class="hamburger" onclick="toggleMenu()">
           <span></span>
           <span></span>
@@ -236,6 +342,13 @@
           <li><a href="#">خدماتنا</a></li>
           <li><a href="#">تواصل معنا</a></li>
         </ul>
+        <ul class="menu-popup" id="menuPopup">
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">من نحن</a></li>
+            <li><a href="#">خدماتنا</a></li>
+            <li><a href="#">تواصل معنا</a></li>
+          </ul>
+     
       </nav>
     
         <form class="d-flex">
@@ -547,9 +660,8 @@
 
   <script>
     function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
+      document.getElementById('menuPopup').classList.toggle('active');
     }
-
     function loadPage(page) {
       let contentDiv = document.getElementById("page-content");
   
