@@ -164,22 +164,63 @@ body {
   font-size: 18px;
 }
 
-/* الخلفية السوداء */
-.overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0,0,0,0.5); /* لون أسود نصف شفاف */
-  display: none;
-  z-index: 1000;
+/* زر القائمة */
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 35px;
+  height: 30px;
+  padding: 0;
+  z-index: 1002;
+}
+
+/* الخطوط الثلاثة */
+.menu-btn span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff; /* لون الخطوط، غيّره حسب لون الخلفية */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* عند تفعيل الزر (فتح القائمة) */
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .overlay.active {
   display: block;
 }
 
+.open-btn, .close-btn {
+  all: unset; /* يمسح كل التنسيقات الافتراضية للزر */
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  -webkit-tap-highlight-color: transparent; /* يزيل الوميض الرمادي عند الضغط على الهاتف */
+}
+
+/* تأثير hover */
+.open-btn:hover, .close-btn:hover {
+  transform: scale(1.2);
+  color: #ff9800;
+}
 
 
     .moving-text {
@@ -337,10 +378,8 @@ body {
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
-<button id="open-sidebar" class="open-btn">☰ القائمة</button>
+<button id="open-sidebar" class="open-btn">☰</button>
 
-<!-- الخلفية السوداء (Overlay) -->
-<div id="overlay" class="overlay"></div>
 
 <!-- القائمة الجانبية -->
 <div id="sidebar" class="sidebar">
