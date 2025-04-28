@@ -100,41 +100,21 @@
     .moving-text {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #38b2ac;
-    overflow: hidden;
-    white-space: nowrap;
-    display: block;
-    text-align: center;
-    animation: movingText 8s linear infinite;
-}
-
-@keyframes movingText {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-.rotating-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #38b2ac;
+    color: #ec3ad5;
     text-align: center;
     display: block;
-    animation: rotateText 3s linear infinite;
+    position: relative;
+    animation: moveText 3s ease-in-out infinite alternate;
 }
 
-@keyframes rotateText {
+@keyframes moveText {
     from {
-        transform: rotate(0deg);
+        transform: translateX(0);
     }
     to {
-        transform: rotate(360deg);
+        transform: translateX(50px);
     }
 }
-
 
     /* البطاقات */
     .card {
@@ -302,7 +282,7 @@
   
     <!-- نص متحرك تحت شريط التنقل -->
     <div id="animatedText"></div>
-    <div class="rotating-text">🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉</div>
+  <div class="moving-text">🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉</div>
 
 <!-- قسم المنتجات -->
 <div class="container py-4">
