@@ -73,7 +73,7 @@
 .navbar-toggler-icon {
   background-color: #eee6e6;
   border-radius: 2px;
-  width: 30px;
+  width: 300px;
   height: 4px;
   display: block;
   margin: 4px 0;
@@ -285,7 +285,7 @@
 
   <img id="special-image" src="images/special-image.jpg" alt="صورة محددة متجاوبة">
   
-    
+  <div id="changingText"></div> 
 
 <!-- قسم المنتجات -->
 <div class="container py-4">
@@ -590,6 +590,19 @@
         }
     }
     window.onload = typeEffect;
+</script>
+
+<script>
+  const words = ["🔥 عروض مذهلة!", "✨ منتجات مميزة!", "🚀 أسرع خدمة توصيل!"];
+  let index = 0;
+
+  function changeText() {
+      document.getElementById("changingText").textContent = words[index];
+      index = (index + 1) % words.length;
+      setTimeout(changeText, 2000);
+  }
+
+  window.onload = changeText;
 </script>
 
 <script>
