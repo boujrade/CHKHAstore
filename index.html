@@ -230,6 +230,25 @@ body {
   color: #ff9800;
 }
 
+.menu-btn {
+  all: unset; /* مسح جميع التنسيقات الافتراضية */
+  font-size: 28px; /* حجم رمز ☰ */
+  color: white; /* لون أبيض */
+  cursor: pointer; /* يظهر شكل اليد عند المرور */
+  position: fixed;
+  top: 20px;
+  left: 20px; /* لاحظ هنا: من اليسار بدل اليمين */
+  z-index: 1003;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* حركة لطيفة عند المرور Hover */
+.menu-btn:hover {
+  transform: rotate(90deg) scale(1.2);
+  color: #ffcc00; /* يتغير إلى أصفر ذهبي عند المرور */
+}
+
+
     .moving-text {
     font-size: 1.2rem;
     font-weight: bold;
@@ -395,7 +414,7 @@ body {
 
   <div class="search-box">
     <input type="text" placeholder="ما الذي تبحث عنه؟">
-    <button class="search-btn">🔍</button>
+    <button class="search-btn"></button>
   </div>
 
   <ul class="menu">
