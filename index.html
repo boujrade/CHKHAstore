@@ -29,7 +29,7 @@
     
     /* شريط التنقل */
     .navbar {
-  background-color: #2a2a2c;
+  background-color: #19191a;
   }
   
  
@@ -64,7 +64,7 @@
 .navbar-toggler-icon {
   background-color: #eee6e6;
   border-radius: 2px;
-  width: 300px;
+  width: 30px;
   height: 4px;
   display: block;
   margin: 4px 0;
@@ -380,13 +380,14 @@ body {
       </a>
 
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+       
+          <button id="open-sidebar" class="menu-btn">
+            ☰
           </button>
-<button id="open-sidebar" class="open-btn">☰</button>
-
+          
+          <!-- خلفية شفافة سوداء -->
+          <div id="overlay" class="overlay"></div>
+          
 
 <!-- القائمة الجانبية -->
 <div id="sidebar" class="sidebar">
