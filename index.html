@@ -25,16 +25,7 @@
       --hover-input-bg: #e2e8f0;         /* خلفية الحقول عند التركيز */
     }
   
-    /* الإعدادات العامة للصفحة */
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background: var(--background-color);
-      color: var(--primary-color);
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
-  
+    
     
     /* شريط التنقل */
     .navbar {
@@ -164,6 +155,21 @@ body {
   font-size: 18px;
 }
 
+/* الخلفية السوداء */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5); /* لون أسود نصف شفاف */
+  display: none;
+  z-index: 1000;
+}
+
+.overlay.active {
+  display: block;
+}
 /* زر القائمة */
 .menu-btn {
   background: none;
@@ -207,13 +213,15 @@ body {
 }
 
 .open-btn, .close-btn {
-  all: unset; /* يمسح كل التنسيقات الافتراضية للزر */
   font-size: 28px;
-  color: white;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: white; /* لون الأيقونة */
   cursor: pointer;
   padding: 8px;
   transition: transform 0.3s ease, color 0.3s ease;
-  -webkit-tap-highlight-color: transparent; /* يزيل الوميض الرمادي عند الضغط على الهاتف */
 }
 
 /* تأثير hover */
@@ -221,7 +229,6 @@ body {
   transform: scale(1.2);
   color: #ff9800;
 }
-
 
     .moving-text {
     font-size: 1.2rem;
@@ -391,10 +398,10 @@ body {
   </div>
 
   <ul class="menu">
-    <li><a href="#">الرئيسية</a></li>
-    <li><a href="#">الشحن والتسليم</a></li>
-    <li><a href="#">طرق الدفع</a></li>
-    <li><a href="#">اتصل بنا</a></li>
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="products.html">منتجاتنا</a></li>
+    <li><a href="offers.html">عروض اليوم</a></li>
+    <li><a href="contact.html">تواصل معنا</a></li>
   </ul>
 </div>
    </div>
