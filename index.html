@@ -95,6 +95,84 @@
       background-color: var(--hover-input-bg);
     }
   
+    body {
+  direction: rtl;
+  font-family: 'Arial', sans-serif;
+}
+
+.open-btn {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: -300px; /* مخفية خارج الشاشة */
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: right 0.3s ease;
+}
+
+.sidebar.active {
+  right: 0; /* تظهر القائمة */
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  background: #f5f5f5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 10px;
+  outline: none;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 15px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+
 
 
     .moving-text {
@@ -252,20 +330,25 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" onclick="loadPage('home')">الصفحة الرئيسية</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="loadPage('categories')">التصنيفات</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="loadPage('contact')">اتصل بنا</a></li>
-                  
-                </ul>
-              </li>
-            </ul>
-          </div>
+          <button id="open-sidebar" class="open-btn">☰ القائمة</button>
+
+<!-- القائمة الجانبية -->
+<div id="sidebar" class="sidebar">
+  <button id="close-sidebar" class="close-btn">✖</button>
+  
+  <div class="search-box">
+    <input type="text" placeholder="ما الذي تبحث عنه؟">
+    <button class="search-btn">🔍</button>
+  </div>
+  
+  <ul class="menu">
+    <li><a href="#">الرئيسية</a></li>
+    <li><a href="#">الشحن والتسليم</a></li>
+    <li><a href="#">طرق الدفع</a></li>
+    <li><a href="#">اتصل بنا</a></li>
+  </ul>
+</div>
+
         </div>
       </nav>
 
@@ -583,6 +666,21 @@
       </ul>
     </div>
   </section>
+
+  <script>
+    const openBtn = document.getElementById('open-sidebar');
+    const closeBtn = document.getElementById('close-sidebar');
+    const sidebar = document.getElementById('sidebar');
+  
+    openBtn.addEventListener('click', () => {
+      sidebar.classList.add('active');
+    });
+  
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+    });
+  </script>
+  
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
