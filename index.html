@@ -95,6 +95,30 @@
       background-color: var(--hover-input-bg);
     }
   
+
+
+    .moving-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #38b2ac;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-align: center;
+    animation: movingText 8s linear infinite;
+}
+
+@keyframes movingText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+
     /* البطاقات */
     .card {
       border: none;
@@ -259,7 +283,9 @@
 
   <img id="special-image" src="images/special-image.jpg" alt="صورة محددة متجاوبة">
   
-
+    <!-- نص متحرك تحت شريط التنقل -->
+    <div id="animatedText"></div>
+  <div class="moving-text">🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉</div>
 
 <!-- قسم المنتجات -->
 <div class="container py-4">
@@ -552,6 +578,19 @@
       </ul>
     </div>
   </section>
+
+  <script>
+    const text = "🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉";
+    let i = 0;
+    function typeEffect() {
+        if (i < text.length) {
+            document.getElementById("animatedText").innerHTML += text[i];
+            i++;
+            setTimeout(typeEffect, 100);
+        }
+    }
+    window.onload = typeEffect;
+</script>
 
 <script>
   function loadPage(page) {
