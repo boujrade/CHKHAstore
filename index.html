@@ -116,6 +116,26 @@
     }
 }
 
+.shaking-text:hover {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    100% { transform: translateX(-2px); }
+}
+
+.fade-in-text {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
     /* البطاقات */
     .card {
       border: none;
@@ -285,7 +305,7 @@
 
   <img id="special-image" src="images/special-image.jpg" alt="صورة محددة متجاوبة">
   
-  <div id="changingText"></div> 
+  <div class="shaking-text">🔥 عروض مذهلة!", "✨ منتجات مميزة!", "🚀 أسرع خدمة توصيل!</div>
 
 <!-- قسم المنتجات -->
 <div class="container py-4">
@@ -349,6 +369,9 @@
     </div>
   </div>
 </div><br>
+ 
+<div class="fade-in-text">✨ مرحباً بك في موقعنا!</div>
+
 
 <!-- نموذج الطلب -->
 <form action="https://usebasin.com/f/d908c7a81323" method="POST">
@@ -580,29 +603,26 @@
   </section>
 
   <script>
-    const text = "🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉";
-    let i = 0;
-    function typeEffect() {
-        if (i < text.length) {
-            document.getElementById("animatedText").innerHTML += text[i];
-            i++;
-            setTimeout(typeEffect, 100);
+    document.addEventListener("DOMContentLoaded", function () {
+        const text = "🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉";
+        let i = 0;
+
+        function typeEffect() {
+            let animatedText = document.getElementById("animatedText");
+            if (!animatedText) {
+                console.error("العنصر animatedText غير موجود!");
+                return;
+            }
+
+            if (i < text.length) {
+                animatedText.innerHTML += text[i];
+                i++;
+                setTimeout(typeEffect, 100);
+            }
         }
-    }
-    window.onload = typeEffect;
-</script>
 
-<script>
-  const words = ["🔥 عروض مذهلة!", "✨ منتجات مميزة!", "🚀 أسرع خدمة توصيل!"];
-  let index = 0;
-
-  function changeText() {
-      document.getElementById("changingText").textContent = words[index];
-      index = (index + 1) % words.length;
-      setTimeout(changeText, 2000);
-  }
-
-  window.onload = changeText;
+        typeEffect(); // تشغيل التأثير بعد تحميل الصفحة
+    });
 </script>
 
 <script>
