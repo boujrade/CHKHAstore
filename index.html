@@ -117,6 +117,23 @@
     }
 }
 
+.rotating-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #38b2ac;
+    text-align: center;
+    display: block;
+    animation: rotateText 3s linear infinite;
+}
+
+@keyframes rotateText {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 
     /* البطاقات */
@@ -285,7 +302,7 @@
   
     <!-- نص متحرك تحت شريط التنقل -->
     <div id="animatedText"></div>
-  <div class="moving-text">🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉</div>
+    <div class="rotating-text">🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉</div>
 
 <!-- قسم المنتجات -->
 <div class="container py-4">
