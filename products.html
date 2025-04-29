@@ -1,287 +1,244 @@
 <!DOCTYPE html>
-  
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <title>المنتجات</title>
-  
-  <!-- Bootstrap RTL CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-
- 
- <style>
-
-
-  body { font-family: 'Tajawal', sans-serif; }
-    .navbar { background-color: #d3eaf0; }
-    .navbar-brand { font-weight: bold; color: white; }
-    .nav-link { color: white; font-size: 1.1rem; }
-    .navbar-toggler-icon { background-color: rgb(255, 255, 255); border-radius: 3px; width: 30px; height: 4px; margin: 4px 0; }
-    .search-bar { border-radius: 20px; }
-
-  body {
-  font-family: 'Tajawal', sans-serif;
-  background-color: #fcf1f1;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
- }
-
-  
-
- /* البطاقات */
- .card {
-  border: none;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease-in-out;
-  background-color: #fff;
- }
- .card:hover {
-  transform: translateY(-5px);
- }
- .product-img {
-  height: 200px;
-  object-fit: contain;
- }
-
- /* الأسعار */
- .price {
-  color: #2e7d32;
-  font-weight: 600;
- }
-.old-price {
-  color: #9e9e9e;
-  text-decoration: line-through;
- }
-.badge-sale {
-  top: 10px;
-  right: 10px;
-  left: auto;
-  background-color: #ceb4b9;
-  font-size: 0.8rem;
- }
-
- /* زر الطلب */
- .btn-success {
-  border-radius: 20px;
-  font-weight: 500;
- }
- .btn-success:hover {
-  background-color: #e20303;
- }
-
- /* نموذج الطلب */
- #orderForm {
-  border-radius: 16px;
-  max-width: 550px;
- }
- #orderForm .form-control, #orderForm textarea {
-  border-radius: 100px;
- }
-
- /* روابط المعلومات الإضافية */
- nav a {
-  font-weight: 500;
-  font-size: 0.95rem;
- }
-
- /* الأقسام المخفية */
- section.hidden-section {
-  display: none;
-  background-color: #ffffff;
-  padding: 30px 20px;
-  margin: 30px auto;
-  max-width: 700px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
- }
-
- section h4 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #af4dc7;
- }
-
- /* للأجهزة الصغيرة */
- @media (max-width: 768px) {
-  .card .card-body {
-    padding: 1rem 0.5rem;
-  }
-  .product-img {
-    height: 180px;
-  }
-  h3, h4 {
-    font-size: 1.1rem;
-  }
- }
+  <title>Electronics Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 280px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+    }
+    .product-info {
+      padding: 15px;
+    }
+    .product-name {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+    .rating {
+      color: #ff9900;
+      margin: 5px 0;
+    }
+    .stars {
+      font-size: 1.2em;
+      color: gold;
+    }
+    .price {
+      font-size: 1.2em;
+      color: #111;
+      margin: 10px 0;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+    }
+    .buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .add-cart {
+      background-color: #ffd814;
+    }
+    .buy-now {
+      background-color: #f08804;
+      color: white;
+    }
+    .share {
+      background: none;
+      border: none;
+      color: #0073bb;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      display: none;
+      z-index: 999;
+    }
   </style>
 </head>
-<body class="bg-light">
+<body>
 
-  <form class="d-flex">
-    <input class="form-control me-2 search-bar" type="search" placeholder="ابحث عن منتج" aria-label="بحث">
-    <button class="btn btn-outline-light" type="submit">بحث</button>
-  </form><br>
- 
+<h2>Just In: Computers & Accessories</h2>
 
-  <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"><br>
-<!-- قسم المنتجات -->
-<div class="container py-4">
-  <h3 class="mb-4">التصنيفات</h3>
-  <div class="row g-4">
+<div class="product-grid">
 
-    <!-- منتج 1 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card position-relative">
-        <span class="badge-sale">En vente</span>
-        <img src="images/html.ppp.jpg" class="card-img-top product-img" alt="حقيبة">
-        <div class="card-body text-center">
-          <p class="card-title">الحقيبة الأمريكية الفخمة</p>
-          <p><span class="old-price">DA 3,900.00</span></p>
-          <p class="price">DA 2,400.00 DZD</p>
-          <a href="#orderForm" class="btn btn-success mt-2">📦 اضغط هنا لطلب</a>
-        </div>
+  <!-- Product 1 -->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71wF7YDIQwL._AC_SX466_.jpg" alt="Samsung Monitor">
+    <div class="product-info">
+      <div class="product-name">SAMSUNG Odyssey G6 27"</div>
+      <div class="rating">⭐ 4.2 (152)</div>
+      <div class="stars" data-stars="4.2"></div>
+      <div class="price">$899.99</div>
+      <div class="buttons">
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
       </div>
-    </div>
-
-    <!-- منتج 2 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card position-relative">
-        <span class="badge-sale">En vente</span>
-        <img src="images/html.png.jpg" class="card-img-top product-img" alt="حقيبة خصر">
-        <div class="card-body text-center">
-          <p class="card-title">حقيبة الخصر للرجال والنساء</p>
-          <p><span class="old-price">DA 2,200.00</span></p>
-          <p class="price">DA 1,600.00 DZD</p>
-          <a href="#orderForm" class="btn btn-success mt-2">📦 اضغط هنا لطلب</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- منتج 3 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card position-relative">
-        <span class="badge-sale">En vente</span>
-
-        <img src="images/html.pgg.jpg" class="card-img-top product-img" alt="آلة خياطة">
-        <div class="card-body text-center">
-          <p class="card-title">آلة خياطة محمولة</p>
-          <p class="price">DA 1,200.00 DZD</p>
-          <a href="#orderForm" class="btn btn-success mt-2">📦 اضغط هنا لطلب</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- منتج 4 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card position-relative">
-        <span class="badge-sale">En vente</span>
-
-        <img src="images/html.ggj.jpg" class="card-img-top product-img" alt="راديو إسلامي">
-        <div class="card-body text-center">
-          <p class="card-title">الجهاز الإسلامي الناطق</p>
-          <p class="price">DA 1,800.00 DZD</p>
-          <a href="#orderForm" class="btn btn-success mt-2">📦 اضغط هنا لطلب</a>
-        </div>
-      </div>
+      <button class="share">🔗 Share</button>
     </div>
   </div>
-</div><br>
 
-<!-- نموذج الطلب -->
-<form action="https://usebasin.com/f/d908c7a81323" method="POST">
-  <div class="container mt-5 bg-white p-4 rounded shadow" id="orderForm">
-    <h4 class="mb-3">📋 نموذج الطلب</h4>
-
-    <div class="mb-3">
-      <label for="product" class="form-label">اسم المنتج</label>
-      <input type="text" class="form-control" id="product" name="product" placeholder="مثال: الحقيبة الأمريكية" required>
+  <!-- Product 2 -->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71GB5M6RHeL._AC_SX466_.jpg" alt="Razer Keyboard">
+    <div class="product-info">
+      <div class="product-name">Razer BlackWidow V4 Pro</div>
+      <div class="rating">⭐ 3.9 (753)</div>
+      <div class="stars" data-stars="3.9"></div>
+      <div class="price">$299.99</div>
+      <div class="buttons">
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+      <button class="share">🔗 Share</button>
     </div>
-
-    <div class="mb-3">
-      <label for="name" class="form-label">الاسم الكامل</label>
-      <input type="text" class="form-control" id="name" name="name" placeholder="أدخل اسمك" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="phone" class="form-label">رقم الهاتف</label>
-      <input type="tel" class="form-control" id="phone" name="phone" placeholder=" ادخل رقمك الهاتف" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="wilaya" class="form-label">الولاية</label>
-      <input type="text" class="form-control" id="wilaya" name="wilaya" placeholder=" ولايتك"required>
-    </div>
-
-    <div class="mb-3">
-      <label for="address" class="form-label">العنوان الكامل</label>
-      <textarea class="form-control" id="address"  placeholder="أدخل العنوان بالتفصيل" required></textarea>
-    </div>
-
-    <div class="mb-3">
-      <label for="address" class="form-label">الكمية المطلوبة</label>
-      <textarea class="form-control" id="message" name="message" placeholder=" أكتب العدد"required></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-primary"> تأكيد الطلب</button>
   </div>
-</form><br>
 
-  <script>
-    function showSection(id) {
-      // إخفاء جميع الأقسام أولاً
-      document.querySelectorAll('.hidden-section').forEach(section => {
-        section.style.display = 'none';
-      });
+  <!-- Product 3 -->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71kWymMHRIL._AC_SX466_.jpg" alt="Logitech Mouse">
+    <div class="product-info">
+      <div class="product-name">Logitech MX Master 3S</div>
+      <div class="rating">⭐ 4.7 (2,342)</div>
+      <div class="stars" data-stars="4.7"></div>
+      <div class="price">$119.99</div>
+      <div class="buttons">
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+      <button class="share">🔗 Share</button>
+    </div>
+  </div>
 
-      // إظهار القسم المطلوب
-      const target = document.getElementById(id);
-      if (target) {
-        target.style.display = 'block';
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  </script>
-  <script>
+  <!-- Product 4 -->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/618n9j7bJyL._AC_SX466_.jpg" alt="TP-Link Deco">
+    <div class="product-info">
+      <div class="product-name">TP-Link Deco BE170</div>
+      <div class="rating">⭐ 4.6 (926)</div>
+      <div class="stars" data-stars="4.6"></div>
+      <div class="price">$499.99</div>
+      <div class="buttons">
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+      <button class="share">🔗 Share</button>
+    </div>
+  </div>
 
-// فتح وإغلاق القائمة عند الضغط على زر التبديل
-document.addEventListener('DOMContentLoaded', function () {
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarCollapse = document.querySelector('#navbarNav');
+  <!-- Product 5 -->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71vfk3Jz+vL._AC_SX466_.jpg" alt="WD SSD">
+    <div class="product-info">
+      <div class="product-name">WD Black SN850X 2TB NVMe</div>
+      <div class="rating">⭐ 4.8 (4,532)</div>
+      <div class="stars" data-stars="4.8"></div>
+      <div class="price">$199.99</div>
+      <div class="buttons">
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+      <button class="share">🔗 Share</button>
+    </div>
+  </div>
 
-  navbarToggler.addEventListener('click', function () {
-    navbarCollapse.classList.toggle('show');
+  <!-- Product 6 -->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71fR0zZlFrL._AC_SX466_.jpg" alt="ASUS GPU">
+    <div class="product-info">
+      <div class="product-name">ASUS ROG Strix RTX 4070</div>
+      <div class="rating">⭐ 4.5 (312)</div>
+      <div class="stars" data-stars="4.5"></div>
+      <div class="price">$649.99</div>
+      <div class="buttons">
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+      <button class="share">🔗 Share</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Notification -->
+<div class="notification" id="notify">✔️ Action completed!</div>
+
+<script>
+  // Render stars
+  document.querySelectorAll(".stars").forEach(el => {
+    const rating = parseFloat(el.dataset.stars);
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 >= 0.5;
+    let starsHTML = "★".repeat(fullStars);
+    if (halfStar) starsHTML += "½";
+    el.textContent = starsHTML;
   });
-});
 
-// وظيفة البحث عن منتج
-document.querySelector('.search-bar').addEventListener('keypress', function (event) {
-  if (event.key === 'Enter') {
-    event.preventDefault(); // منع إعادة تحميل الصفحة
-    const query = event.target.value.trim(); // النص المدخل
-    if (query) {
-      alert(`تم البحث عن المنتج: ${query}`); // عرض رسالة البحث
-    } else {
-      alert('يرجى إدخال اسم المنتج للبحث!');
-    }
+  // Notification
+  function showNotification(message) {
+    const notify = document.getElementById("notify");
+    notify.textContent = message;
+    notify.style.display = "block";
+    setTimeout(() => notify.style.display = "none", 2000);
   }
-});
 
-// تأثير بسيط عند الضغط على الروابط
-document.querySelectorAll('.nav-link').forEach(function (link) {
-  link.addEventListener('click', function () {
-    alert(`تم الانتقال إلى: ${link.textContent}`);
-  });
-});
+  // Add to cart / Buy now
+  document.querySelectorAll(".add-cart").forEach(btn =>
+    btn.addEventListener("click", () => showNotification("🛒 Added to cart!"))
+  );
+  document.querySelectorAll(".buy-now").forEach(btn =>
+    btn.addEventListener("click", () => showNotification("✅ Proceeding to checkout..."))
+  );
 
-  </script>
-  
+  // Share button
+  document.querySelectorAll(".share").forEach(btn =>
+    btn.addEventListener("click", () => {
+      navigator.clipboard.writeText(window.location.href);
+      showNotification("🔗 Product link copied!");
+    })
+  );
+</script>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
