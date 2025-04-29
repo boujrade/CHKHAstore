@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>Samsung Odyssey G6</title>
+  <title>لوحة مفاتيح Razer</title>
   <style>
-    body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; }
+    body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
     .container {
       max-width: 900px; margin: auto; background: #fff; padding: 20px;
       border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -21,10 +21,10 @@
     .buttons .prev { left: 10px; }
     .buttons .next { right: 10px; }
 
-    .desc { margin-top: 20px; font-size: 1.1em; color: #333; line-height: 1.6; }
+    .desc { margin-top: 20px; font-size: 1.1em; color: #333; line-height: 1.6; text-align: right; }
     .price { font-size: 2em; color: #111; margin: 20px 0; }
 
-    .btns { display: flex; gap: 15px; margin-top: 20px; }
+    .btns { display: flex; gap: 15px; margin-top: 20px; justify-content: flex-end; }
     .btns button {
       padding: 15px 25px; border: none; border-radius: 6px;
       font-size: 1em; cursor: pointer;
@@ -36,35 +36,35 @@
 <body>
 
 <div class="container">
-  <h2>Samsung Odyssey G6 27” QHD 360Hz</h2>
+  <h2>لوحة مفاتيح Razer BlackWidow V4 Pro</h2>
   <div class="gallery">
-    <img id="mainImage" src="https://m.media-amazon.com/images/I/71wF7YDIQwL._AC_SX466_.jpg" alt="Samsung Monitor">
+    <img id="mainImage" src="https://m.media-amazon.com/images/I/71WFoDAvPsL._AC_SX466_.jpg" alt="لوحة مفاتيح Razer">
     <div class="buttons">
       <button class="prev" onclick="prevImage()">❮</button>
       <button class="next" onclick="nextImage()">❯</button>
     </div>
   </div>
 
-  <div class="price">$899.99</div>
+  <div class="price">$199.99</div>
 
   <div class="desc">
-    Experience the ultra-fast 360Hz refresh rate with 0.03ms response time.<br>
-    OLED display offers deep blacks and vibrant colors for immersive gameplay.<br>
-    Includes 3-year warranty. Ideal for competitive gamers.<br>
-    ★★★★★ 152 Reviews – Rated 4.2/5.
+    لوحة مفاتيح ميكانيكية بإضاءة RGB قابلة للتخصيص بالكامل.<br>
+    مفاتيح Razer Green Switch للحصول على استجابة سريعة ودقة عالية.<br>
+    تحتوي على أزرار ماكرو قابلة للبرمجة لتعزيز أداء اللاعبين المحترفين.<br>
+    ★★★★★ 320 تقييم – التقييم العام 4.7/5.
   </div>
 
   <div class="btns">
-    <button class="add-cart">Add to Cart</button>
-    <button class="buy-now">Buy Now</button>
+    <button class="add-cart">أضف إلى السلة</button>
+    <button class="buy-now">اشترِ الآن</button>
   </div>
 </div>
 
 <script>
   const images = [
-    "https://m.media-amazon.com/images/I/71wF7YDIQwL._AC_SX466_.jpg",
-    "https://m.media-amazon.com/images/I/61zAjw4bqPL._AC_SX466_.jpg",
-    "https://m.media-amazon.com/images/I/71a8X7iK-UL._AC_SX466_.jpg"
+    "https://m.media-amazon.com/images/I/71WFoDAvPsL._AC_SX466_.jpg",
+    "https://m.media-amazon.com/images/I/81i7EHzMOYL._AC_SX466_.jpg",
+    "https://m.media-amazon.com/images/I/71qM7jKj+oL._AC_SX466_.jpg"
   ];
   let index = 0;
   const img = document.getElementById("mainImage");
