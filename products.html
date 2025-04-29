@@ -1,243 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>Electronics Store</title>
+  <title>منتجات متجرنا</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f7fa;
       margin: 0;
-      padding: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      direction: rtl;
     }
-    h2 {
+
+    h1 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
+
+    .products-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 15px;
     }
+
     .product-card {
       background: #fff;
+      border: 1px solid #ddd;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 280px;
-      overflow: hidden;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.3s;
+      transition: 0.3s;
     }
+
     .product-card:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px);
     }
+
     .product-card img {
       width: 100%;
-      height: 180px;
+      height: 150px;
       object-fit: contain;
+      border-radius: 8px;
     }
-    .product-info {
-      padding: 15px;
+
+    .product-card h4 {
+      margin: 10px 0 5px;
+      font-size: 16px;
     }
-    .product-name {
-      font-weight: bold;
-      font-size: 1.1em;
-      margin: 10px 0;
-    }
-    .rating {
-      color: #ff9900;
+
+    .product-card .rating {
+      font-size: 14px;
+      color: #f5a623;
       margin: 5px 0;
     }
-    .stars {
-      font-size: 1.2em;
-      color: gold;
-    }
-    .price {
-      font-size: 1.2em;
-      color: #111;
-      margin: 10px 0;
-    }
-    .buttons {
-      display: flex;
-      justify-content: space-around;
-      padding: 10px;
-    }
-    .buttons button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+
+    .product-card p {
+      color: #444;
+      margin: 5px 0 10px;
       font-weight: bold;
     }
-    .add-cart {
-      background-color: #ffd814;
-    }
-    .buy-now {
-      background-color: #f08804;
+
+    .product-card button {
+      background: orange;
       color: white;
-    }
-    .share {
-      background: none;
       border: none;
-      color: #0073bb;
+      padding: 8px 14px;
+      border-radius: 8px;
       cursor: pointer;
-      margin-top: 10px;
+      font-weight: bold;
+      margin: 5px 5px 0 5px;
     }
-    .notification {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #4caf50;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 6px;
-      display: none;
-      z-index: 999;
+
+    .share-btn {
+      background: #ddd;
+      color: #333;
+      font-size: 13px;
+    }
+
+    @media (max-width: 500px) {
+      .products-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
 <body>
 
-<h2>Just In: Computers & Accessories</h2>
+<h1>منتجاتنا</h1>
 
-<div class="product-grid">
+<div class="products-container">
 
-  <!-- Product 1 -->
   <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/71wF7YDIQwL._AC_SX466_.jpg" alt="Samsung Monitor">
-    <div class="product-info">
-      <div class="product-name">SAMSUNG Odyssey G6 27"</div>
-      <div class="rating">⭐ 4.2 (152)</div>
-      <div class="stars" data-stars="4.2"></div>
-      <div class="price">$899.99</div>
-      <div class="buttons">
-        <button class="add-cart">Add to Cart</button>
-        <button class="buy-now">Buy Now</button>
-      </div>
-      <button class="share">🔗 Share</button>
-    </div>
+    <img src="images/product1.jpg" alt="Samsung Monitor">
+    <h4>شاشة Samsung G6</h4>
+    <div class="rating">⭐⭐⭐⭐☆ (4.2)</div>
+    <p>$899.99</p>
+    <button onclick="goToDetails('Samsung Odyssey G6')">شراء</button>
+    <button class="share-btn" onclick="shareProduct('شاشة Samsung G6')">🔗 مشاركة</button>
   </div>
 
-  <!-- Product 2 -->
   <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/71GB5M6RHeL._AC_SX466_.jpg" alt="Razer Keyboard">
-    <div class="product-info">
-      <div class="product-name">Razer BlackWidow V4 Pro</div>
-      <div class="rating">⭐ 3.9 (753)</div>
-      <div class="stars" data-stars="3.9"></div>
-      <div class="price">$299.99</div>
-      <div class="buttons">
-        <button class="add-cart">Add to Cart</button>
-        <button class="buy-now">Buy Now</button>
-      </div>
-      <button class="share">🔗 Share</button>
-    </div>
+    <img src="images/product2.jpg" alt="TP-Link Deco">
+    <h4>موزع TP-Link BE170</h4>
+    <div class="rating">⭐⭐⭐⭐⭐ (5.0)</div>
+    <p>$649.99</p>
+    <button onclick="goToDetails('TP-Link Deco BE170')">شراء</button>
+    <button class="share-btn" onclick="shareProduct('موزع TP-Link')">🔗 مشاركة</button>
   </div>
 
-  <!-- Product 3 -->
   <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/71kWymMHRIL._AC_SX466_.jpg" alt="Logitech Mouse">
-    <div class="product-info">
-      <div class="product-name">Logitech MX Master 3S</div>
-      <div class="rating">⭐ 4.7 (2,342)</div>
-      <div class="stars" data-stars="4.7"></div>
-      <div class="price">$119.99</div>
-      <div class="buttons">
-        <button class="add-cart">Add to Cart</button>
-        <button class="buy-now">Buy Now</button>
-      </div>
-      <button class="share">🔗 Share</button>
-    </div>
+    <img src="images/product3.jpg" alt="Razer Keyboard">
+    <h4>لوحة مفاتيح Razer</h4>
+    <div class="rating">⭐⭐⭐⭐☆ (4.5)</div>
+    <p>$299.99</p>
+    <button onclick="goToDetails('Razer Keyboard')">شراء</button>
+    <button class="share-btn" onclick="shareProduct('لوحة Razer')">🔗 مشاركة</button>
   </div>
 
-  <!-- Product 4 -->
   <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/618n9j7bJyL._AC_SX466_.jpg" alt="TP-Link Deco">
-    <div class="product-info">
-      <div class="product-name">TP-Link Deco BE170</div>
-      <div class="rating">⭐ 4.6 (926)</div>
-      <div class="stars" data-stars="4.6"></div>
-      <div class="price">$499.99</div>
-      <div class="buttons">
-        <button class="add-cart">Add to Cart</button>
-        <button class="buy-now">Buy Now</button>
-      </div>
-      <button class="share">🔗 Share</button>
-    </div>
+    <img src="images/product4.jpg" alt="Logitech Mouse">
+    <h4>فأرة Logitech G Pro</h4>
+    <div class="rating">⭐⭐⭐⭐☆ (4.6)</div>
+    <p>$149.99</p>
+    <button onclick="goToDetails('Logitech Mouse')">شراء</button>
+    <button class="share-btn" onclick="shareProduct('فأرة Logitech')">🔗 مشاركة</button>
   </div>
 
-  <!-- Product 5 -->
   <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/71vfk3Jz+vL._AC_SX466_.jpg" alt="WD SSD">
-    <div class="product-info">
-      <div class="product-name">WD Black SN850X 2TB NVMe</div>
-      <div class="rating">⭐ 4.8 (4,532)</div>
-      <div class="stars" data-stars="4.8"></div>
-      <div class="price">$199.99</div>
-      <div class="buttons">
-        <button class="add-cart">Add to Cart</button>
-        <button class="buy-now">Buy Now</button>
-      </div>
-      <button class="share">🔗 Share</button>
-    </div>
+    <img src="images/product5.jpg" alt="Webcam">
+    <h4>كاميرا HD 1080p</h4>
+    <div class="rating">⭐⭐⭐☆☆ (3.8)</div>
+    <p>$79.99</p>
+    <button onclick="goToDetails('Webcam HD')">شراء</button>
+    <button class="share-btn" onclick="shareProduct('كاميرا ويب')">🔗 مشاركة</button>
   </div>
 
-  <!-- Product 6 -->
   <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/71fR0zZlFrL._AC_SX466_.jpg" alt="ASUS GPU">
-    <div class="product-info">
-      <div class="product-name">ASUS ROG Strix RTX 4070</div>
-      <div class="rating">⭐ 4.5 (312)</div>
-      <div class="stars" data-stars="4.5"></div>
-      <div class="price">$649.99</div>
-      <div class="buttons">
-        <button class="add-cart">Add to Cart</button>
-        <button class="buy-now">Buy Now</button>
-      </div>
-      <button class="share">🔗 Share</button>
-    </div>
+    <img src="images/product6.jpg" alt="USB Hub">
+    <h4>محول USB-C 7 منافذ</h4>
+    <div class="rating">⭐⭐⭐⭐☆ (4.4)</div>
+    <p>$49.99</p>
+    <button onclick="goToDetails('USB-C Hub')">شراء</button>
+    <button class="share-btn" onclick="shareProduct('محول USB')">🔗 مشاركة</button>
   </div>
 
 </div>
 
-<!-- Notification -->
-<div class="notification" id="notify">✔️ Action completed!</div>
-
 <script>
-  // Render stars
-  document.querySelectorAll(".stars").forEach(el => {
-    const rating = parseFloat(el.dataset.stars);
-    const fullStars = Math.floor(rating);
-    const halfStar = rating % 1 >= 0.5;
-    let starsHTML = "★".repeat(fullStars);
-    if (halfStar) starsHTML += "½";
-    el.textContent = starsHTML;
-  });
-
-  // Notification
-  function showNotification(message) {
-    const notify = document.getElementById("notify");
-    notify.textContent = message;
-    notify.style.display = "block";
-    setTimeout(() => notify.style.display = "none", 2000);
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
   }
 
-  // Add to cart / Buy now
-  document.querySelectorAll(".add-cart").forEach(btn =>
-    btn.addEventListener("click", () => showNotification("🛒 Added to cart!"))
-  );
-  document.querySelectorAll(".buy-now").forEach(btn =>
-    btn.addEventListener("click", () => showNotification("✅ Proceeding to checkout..."))
-  );
-
-  // Share button
-  document.querySelectorAll(".share").forEach(btn =>
-    btn.addEventListener("click", () => {
-      navigator.clipboard.writeText(window.location.href);
-      showNotification("🔗 Product link copied!");
-    })
-  );
+  function goToDetails(name) {
+    alert(`سيتم توجيهك إلى صفحة تفاصيل: ${name} (مثال فقط)`);
+    // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
+  }
 </script>
 
 </body>
