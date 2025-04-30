@@ -477,10 +477,10 @@ button {
   <button id="close-sidebar" class="close-btn">✖</button>
 
   <div class="search-box">
-    <input type="text" placeholder="ما الذي تبحث عنه؟">
-    <button class="search-btn"></button>
-  </div>
-
+    <input type="text" id="searchInput" placeholder="ما الذي تبحث عنه؟">
+</div>
+<ul id="searchResults"></ul>
+<ul id="searchResults"></ul>
   <ul class="menu">
     <li><a href="index.html">الرئيسية</a></li>
     <li><a href="products.html">منتجاتنا</a></li>
@@ -510,7 +510,40 @@ button {
     <img src="images/html.rtj.jpg" class="slide">
     <img src="images/html.jrt.jpg" class="slide">
     <img src="images/html.uyt.jpg" class="slide">
-    <img src="images/html.tyu.jpg" class="slide">
+    <img src="images/html.qaz.jpg" class="slide">
+    <img src="images/html.edc.jpg" class="slide">
+    <img src="images/html.rfv.jpg" class="slide">
+    <img src="images/html.tgb.jpg" class="slide">
+    <img src="images/html.yhn.jpg" class="slide">
+    <img src="images/html.ujm.jpg" class="slide">
+    <img src="images/html.ik,.jpg" class="slide">
+    <img src="images/html.ol..jpg" class="slide">
+    <img src="images/html.zaq.jpg" class="slide">
+    <img src="images/html.xsw.jpg" class="slide">
+    <img src="images/html.nhy.jpg" class="slide">
+    <img src="images/html.mju.jpg" class="slide">
+    <img src="images/html.poi.jpg" class="slide">
+    <img src="images/html.awd.jpg" class="slide">
+    <img src="images/html.drg.jpg" class="slide">
+    <img src="images/html.gyj.jpg" class="slide">
+    <img src="images/html.jil.jpg" class="slide">
+    <img src="images/html.qse.jpg" class="slide">
+    <img src="images/html.eft.jpg" class="slide">
+    <img src="images/html.thu.jpg" class="slide">
+    <img src="images/html.uko.jpg" class="slide">
+    <img src="images/html.jki.jpg" class="slide">
+    <img src="images/html.zsx.jpg" class="slide">
+    <img src="images/html.xdc.jpg" class="slide">
+    <img src="images/html.cfv.jpg" class="slide">
+    <img src="images/html.vgb.jpg" class="slide">
+    <img src="images/html.bhn.jpg" class="slide">
+    <img src="images/html.njm.jpg" class="slide">
+    <img src="images/html.azs.jpg" class="slide">
+    <img src="images/html.sxd.jpg" class="slide">
+    <img src="images/html.dcf.jpg" class="slide">
+    <img src="images/html.fvg.jpg" class="slide">
+    <img src="images/html.gbh.jpg" class="slide">
+    <img src="images/html.hnj.jpg" class="slide">
 </div>
 
 <script src="script.js"></script><br>
@@ -612,8 +645,8 @@ button {
   </div>
 </div><br>
  
-<div class="fade-in-text">✨ مرحباً بك في موقعنا!</div>
 
+<p>✨ لعرض المزيد من منتجاتنا انتقل الى القائمة</p>
 
 
 
@@ -910,27 +943,55 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // وظيفة البحث عن منتج
-document.querySelector('.search-bar').addEventListener('keypress', function (event) {
-  if (event.key === 'Enter') {
-    event.preventDefault(); // منع إعادة تحميل الصفحة
-    const query = event.target.value.trim(); // النص المدخل
-    if (query) {
-      alert(`تم البحث عن المنتج: ${query}`); // عرض رسالة البحث
+const searchInput = document.getElementById("searchInput");
+const resultsContainer = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", debounce(() => {
+    const searchQuery = searchInput.value.trim().toLowerCase();
+    resultsContainer.innerHTML = ""; // مسح النتائج القديمة
+
+    if (searchQuery === "") return; // إذا كان فارغًا، لا تعرض شيء
+
+    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchQuery));
+
+    if (filteredProducts.length === 0) {
+        resultsContainer.innerHTML = "<li>لا توجد نتائج</li>";
     } else {
-      alert('يرجى إدخال اسم المنتج للبحث!');
+        filteredProducts.forEach(product => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${product.name} - ${product.category}`;
+            resultsContainer.appendChild(listItem);
+        });
     }
-  }
-});
+}, 300)); // تقليل عمليات البحث الزائدة باستخدام debounce
 
-// تأثير بسيط عند الضغط على الروابط
-document.querySelectorAll('.nav-link').forEach(function (link) {
-  link.addEventListener('click', function () {
-    alert(`تم الانتقال إلى: ${link.textContent}`);
-  });
-});
-
+// وظيفة debounce لتقليل الضغط على المتصفح عند الكتابة السريعة
+function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(...args), delay);
+    };
+}
   </script>
   
+  <script>
+  let products = [
+  { id: 1, name: "هاتف سامسونج", category: "إلكترونيات" },
+  { id: 2, name: "لابتوب ديل", category: "إلكترونيات" }
+];
+
+// إضافة منتج جديد
+products.push({ id: 3, name: "ساعة ذكية", category: "إكسسوارات" });
+
+// تحديث اسم المنتج
+products = products.map(product => 
+  product.id === 1 ? { ...product, name: "هاتف سامسونج الجديد" } : product
+);
+
+console.log(products);
+
+</script>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
