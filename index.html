@@ -390,14 +390,39 @@ body {
     /*صوراوبة*/   
     .slider {
     position: relative;
-    width: 80%;
-    max-width: 600px;
-    margin: auto;
+    width: 100vw; /* جعل العرض بكامل الشاشة */
+    max-width: 100vw;
+    margin: 0; /* إزالة الهوامش */
     overflow: hidden;
 }
 
 .slide {
-    width: 100%;
+    width: 100vw; /* جعل الصورة تمتد بكامل عرض الشاشة */
+    height: auto; /* الحفاظ على نسبة الأبعاد */
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#prevBtn {
+    left: 5px; /* تقليل المسافة للحصول على مظهر أكثر تناسقًا */
+}
+
+#nextBtn {
+    right: 5px; /* تقليل المسافة كذلك */
     display: none;
 }
 
@@ -476,7 +501,7 @@ button {
 <div class="moving-text">🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉</div>
 
 
-  <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"><br>
+  <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر">
 
  
   
@@ -488,7 +513,7 @@ button {
     <img src="images/html.tyu.jpg" class="slide">
 </div>
 
-<script src="script.js"></script>
+<script src="script.js"></script><br>
 
   <img id="special-image" src="images/special-image.jpg" alt="صورة محددة متجاوبة">
   
