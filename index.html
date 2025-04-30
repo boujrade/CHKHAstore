@@ -385,6 +385,38 @@ body {
         }
 
 
+   /* التاريخ والوقت*/
+   body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .ticker-container {
+      overflow: hidden;
+      white-space: nowrap;
+      background-color: transparent;
+      padding: 8px;
+      direction: ltr;
+    }
+
+    .ticker {
+      display: inline-block;
+      animation: scroll-left 15s linear infinite;
+      font-size: 14px;
+      color: #333;
+      font-weight: normal;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
   </style>
 </head>
 <body class="bg-light">
@@ -432,6 +464,11 @@ body {
   </nav> <br>
 
 <!-- نص متحرك تحت شريط التنقل -->
+
+<div class="ticker-container">
+  <div class="ticker" id="clock">Chargement de l'heure...</div>
+</div>
+
 
 <div class="moving-text">🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉</div>
 
@@ -730,6 +767,22 @@ body {
       </ul>
     </div>
   </section>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const days = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+      const dayName = days[now.getDay()];
+      const date = now.toLocaleDateString('ar-EG');
+      const time = now.toLocaleTimeString('ar-EG');
+
+      const message = `${dayName} - ${date} | الساعة الآن: ${time}`;
+      document.getElementById('clock').textContent = message;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
 
   <script>
     const openBtn = document.getElementById('open-sidebar');
