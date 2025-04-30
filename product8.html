@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>محول USB-C 7 منافذ</title>
+  <title>حقيبة الضهر</title>
   <style>
     body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
     .container {
@@ -45,14 +45,14 @@
     </div>
   </div>
 
-  <div class="price">$59.99</div>
+  <div class="price"> DA 1,600.00 DZD</div>
 
   <div class="desc">
     استمتع بتصميم مريح وعصري مع حقيبة الظهر المقاومة للماء.<br>
     توفر جيوبًا متعددة لتنظيم الأغراض، بما في ذلك مساحة مخصصة للكمبيوتر المحمول حتى 15.6 إنش.<br>
     خامة متينة وخفيفة الوزن لضمان الراحة أثناء التنقل.<br>
     ★★★★★ 210 تقييم –  4.5/5.
-    DA 1,600.00 DZD
+   
 </div>
 
   <div class="btns">
@@ -82,5 +82,18 @@
     }
   </script>
 
+<script>
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
 </body>
 </html>

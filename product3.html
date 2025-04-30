@@ -56,29 +56,29 @@
 
   <div class="btns">
     <button class="add-cart">أضف إلى السلة</button>
-    <button class="buy-now">اشترِ الآن</button>
+    <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
   </div>
 </div>
 
 <script>
-  const images = [
-    "https://m.media-amazon.com/images/I/71WFoDAvPsL._AC_SX466_.jpg",
-    "https://m.media-amazon.com/images/I/81i7EHzMOYL._AC_SX466_.jpg",
-    "https://m.media-amazon.com/images/I/71qM7jKj+oL._AC_SX466_.jpg"
-  ];
-  let index = 0;
-  const img = document.getElementById("mainImage");
-
-  function nextImage() {
-    index = (index + 1) % images.length;
-    img.src = images[index];
-  }
-
-  function prevImage() {
-    index = (index - 1 + images.length) % images.length;
-    img.src = images[index];
-  }
-</script>
+    const images = [
+      "images/product1.jpg",
+      "images/product2.jpg",
+      "images/product3.jpg"
+    ];
+    let index = 0;
+    const img = document.getElementById("mainImage");
+  
+    function nextImage() {
+      index = (index + 1) % images.length;
+      img.src = images[index];
+    }
+  
+    function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      img.src = images[index];
+    }
+  </script>
 
 </body>
 </html>

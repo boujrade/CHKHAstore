@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>TP-Link BE170</title>
+  <title>حقيبة الضهر</title>
   <style>
     body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
     .container {
@@ -36,26 +36,27 @@
 <body>
 
 <div class="container">
-  <h2>راوتر TP-Link BE170 Wi-Fi 7</h2>
+  <h2>  حقيبة الخصر للرجال والنساء</h2>
   <div class="gallery">
-    <img id="mainImage" src="https://m.media-amazon.com/images/I/61OwRfyFYHL._AC_SX466_.jpg" alt="راوتر TP-Link">
+    <img id="mainImage" src="images/html.png.jpg"alt=" حقيبة الظهر">
     <div class="buttons">
       <button class="prev" onclick="prevImage()">❮</button>
       <button class="next" onclick="nextImage()">❯</button>
     </div>
   </div>
 
-  <div class="price">$299.99</div>
+  <div class="price"> DA 1,600.00 DZD</div>
 
   <div class="desc">
-    استمتع بسرعات Wi-Fi 7 تصل إلى 19Gbps لأداء فائق.<br>
-    تقنية OFDMA و MU-MIMO لضمان اتصال متعدد الأجهزة دون تأخير.<br>
-    تصميم أنيق مع هوائيات قوية لتحسين التغطية اللاسلكية.<br>
-    ★★★★★ 210 تقييم – التقييم العام 4.5/5.
-  </div>
+    تصميم عملي وأنيق يناسب الرجال والنساء، مثالي للاستخدام اليومي والسفر.<br>
+    توفر جيوب متعددة لتنظيم الأغراض الأساسية مثل الهاتف، المحفظة، والمفاتيح.<br>
+    مصنوعة من مواد مقاومة للماء لضمان الحماية أثناء التنقل.<br>
+    خفيفة الوزن مع حزام قابل للتعديل لراحة إضافية أثناء الارتداء.<br>
+</div>
 
   <div class="btns">
     <button class="add-cart">أضف إلى السلة</button>
+   
     <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
   </div>
 </div>
@@ -80,5 +81,18 @@
     }
   </script>
 
+<script>
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
 </body>
 </html>
