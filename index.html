@@ -385,37 +385,44 @@ body {
         }
 
 
-   /* التاريخ والوقت*/
-   body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+    /*صوراوبة*/   
+        body {
       margin: 0;
-      padding: 30px;
+      padding: 0;
+      background: #f4f4f4;
     }
 
-    .ticker-container {
+    .slider {
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      margin: 30px auto;
       overflow: hidden;
-      white-space: nowrap;
-      background-color: transparent;
-      padding: 8px;
-      direction: ltr;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      position: relative;
     }
 
-    .ticker {
-      display: inline-block;
-      animation: scroll-left 15s linear infinite;
-      font-size: 14px;
-      color: #333;
-      font-weight: normal;
+    .slides {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slide 12s infinite;
     }
 
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0%); }
+      33%  { transform: translateX(0%); }
+      36%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-100%); }
+      69%  { transform: translateX(-200%); }
+      100% { transform: translateX(-200%); }
     }
   </style>
 </head>
@@ -465,15 +472,20 @@ body {
 
 <!-- نص متحرك تحت شريط التنقل -->
 
-<div class="ticker-container">
-  <div class="ticker" id="clock">Chargement de l'heure...</div>
-</div>
 
 
 <div class="moving-text">🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉</div>
 
 
   <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"><br>
+
+  <div class="slider">
+    <div class="slides">
+      <img src="images/html.rtj.jpg" alt="صورة 1">
+      <img src="images/html.trj.jpg" alt="صورة 2">
+      <img src="images/html.jrt.jpg" alt="صورة 3">
+    </div>
+  </div>
 
 
   <img id="special-image" src="images/special-image.jpg" alt="صورة محددة متجاوبة">
@@ -767,22 +779,6 @@ body {
       </ul>
     </div>
   </section>
-
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const days = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
-      const dayName = days[now.getDay()];
-      const date = now.toLocaleDateString('ar-EG');
-      const time = now.toLocaleTimeString('ar-EG');
-
-      const message = `${dayName} - ${date} | الساعة الآن: ${time}`;
-      document.getElementById('clock').textContent = message;
-    }
-
-    updateClock();
-    setInterval(updateClock, 1000);
-  </script>
 
   <script>
     const openBtn = document.getElementById('open-sidebar');
