@@ -12,6 +12,8 @@
 
   <title>صورة محددة متجاوبة</title>
 
+  <title>معرض الصور</title>
+  <link rel="stylesheet" href="styles.css">
 
   <style>
     /* تعريف المتغيرات الأساسية للألوان */
@@ -386,36 +388,41 @@ body {
 
 
     /*صوراوبة*/   
-    body {
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      font-family: Arial, sans-serif;
-    }
-
     .slider {
-      width: 90%;
-      max-width: 800px;
-      height: 400px;
-      margin: 40px auto;
-      overflow: hidden;
-      position: relative;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
 
-    .slides {
-      display: flex;
-      height: 100%;
-      transition: transform 1s ease-in-out;
-    }
+.slide {
+    width: 100%;
+    display: none;
+}
 
-    .slides img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
+.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
   </style>
 </head>
 <body class="bg-light">
@@ -472,13 +479,16 @@ body {
   <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"><br>
 
  
+  
   <div class="slider">
-    <div class="slides" id="slides">
-      <img src="images/html.trj.jpg" alt="صورة 1">
-      <img src="images/html.rtj.jpg" alt="صورة 2">
-      <img src="images/html.jrt.jpg" alt="صورة 3">
-    </div>
-  </div>
+    <img src="images/html.trj.jpg" class="slide active">
+    <img src="images/html.rtj.jpg" class="slide">
+    <img src="images/html.jrt.jpg" class="slide">
+    <img src="images/html.uyt.jpg" class="slide">
+    <img src="images/html.tyu.jpg" class="slide">
+</div>
+
+<script src="script.js"></script>
 
   <img id="special-image" src="images/special-image.jpg" alt="صورة محددة متجاوبة">
   
@@ -773,14 +783,21 @@ body {
   </section>
 
    <script>
-    const slides = document.getElementById('slides');
-    const totalSlides = slides.children.length;
-    let index = 0;
+   const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
 
-    setInterval(() => {
-      index = (index + 1) % totalSlides;
-      slides.style.transform = `translateX(-${index * 100}%)`;
-    }, 4000);
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+// تغيير الصورة كل 3 ثوانٍ تلقائيًا
+setInterval(nextSlide, 3000);
   </script>
   <script>
     const openBtn = document.getElementById('open-sidebar');
