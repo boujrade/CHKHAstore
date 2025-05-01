@@ -9,42 +9,32 @@
       max-width: 900px; margin: auto; background: #fff; padding: 20px;
       border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .gallery {
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  .image-container {
-    position: relative;
-    display: inline-block;
-  }
-
-  .slide {
-    width: 400px;
-    border-radius: 10px;
-  }
-
+    .gallery { position: relative; text-align: center; }
+    .gallery img {
+      width: 100%; max-height: 400px; border-radius: 10px; object-fit: contain;
     }
-    .buttons button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    left: 10px; /* قريب من الطرف الأيسر */
-  }
+    /* حاوية الأزرار */
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
 
-  .buttons .next {
-    right: 10px; /* قريب من الطرف الأيمن */
-  }
+/* الزر */
+.buttons button {
+  font-size: 28px;
+  padding: 10px 16px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  .buttons button:hover {
-    background-color: #ccc;
-  }
+.buttons button:hover {
+  background-color: #ddd;
+}}
 
     .desc { margin-top: 20px; font-size: 1.1em; color: #333; line-height: 1.6; text-align: right; }
     .price { font-size: 2em; color: #111; margin: 20px 0; }
@@ -62,17 +52,15 @@
 
 <div class="container">
   <h1>🖥️ شاشة Samsung Odyssey OLED G6 (طراز G60SD) – قمة تجربة الألعاب البصرية لعام 2024</h1>
+  <div class="gallery">
+    
 
-
-  <div class="buttons">
-    <div class="gallery">
-      <img class="slide" src="images/produits/01.jpg" style="display: block;">
-      <img class="slide" src="images/produits/02.jpg" style="display: none;">
-      <img class="slide" src="images/produits/03.jpg" style="display: none;">
-      <img class="slide" src="images/produits/04.jpg" style="display: none;">
+    <div class="slider">
+      <img class="slide" src="images/produits/005.jpg" style="display: block;">
+    
       <img class="slide" src="images/produits/05.jpg" style="display: none;">
     
-     
+      <div class="buttons">
         <button onclick="prevImage()">❮</button>
         <button onclick="nextImage()">❯</button>
       </div>
