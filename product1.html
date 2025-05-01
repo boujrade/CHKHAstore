@@ -21,18 +21,24 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.gallery {
-  position: relative;
+.slider {
+    position: relative;
+    width: 100vw; /* جعل العرض بكامل الشاشة */
+    max-width: 100vw;
+    margin:auto; /* إزالة الهوامش */
+    position: relative;
+     text-align: center;
+}
   text-align: center;
+
+
+.slide {
+    width: 100vw; /* جعل الصورة تمتد بكامل عرض الشاشة */
+    height: auto; /* الحفاظ على نسبة الأبعاد */
+    display: none;
 }
 
-.gallery img {
-  width: 100%;
-  height: auto; /* اجعل الارتفاع مرنًا */
-  max-height: none; /* إزالة الحد الأقصى للارتفاع */
-  border-radius: 10px;
-  object-fit: contain;
-}
+
 
 /* تحسين القياسات للهواتف */
 @media (max-width: 768px) {
