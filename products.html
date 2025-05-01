@@ -46,18 +46,109 @@
 }
 
 /* تحسين القياسات للهواتف */
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  direction: rtl;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery {
+  position: relative;
+  text-align: center;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto; /* اجعل الارتفاع مرنًا */
+  max-height: none; /* إزالة الحد الأقصى للارتفاع */
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* تحسين القياسات للهواتف */
 @media (max-width: 768px) {
-  .product-card img {
-    height: 120px; /* أو أقل حسب التصميم */
+  .gallery img {
+    height: auto; /* إزالة القيود على الارتفاع ليكون مرن */
   }
 }
 
 @media (max-width: 480px) {
-  .product-card img {
-    height: 100px;
+  .gallery img {
+    height: auto; /* إزالة القيود على الارتفاع ليكون مرن */
   }
 }
 
+/* حاوية الأزرار */
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* الزر */
+.buttons button {
+  font-size: 28px;
+  padding: 10px 16px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #ddd;
+}
+
+.desc {
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: #333;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.price {
+  font-size: 2em;
+  color: #111;
+  margin: 20px 0;
+}
+
+.btns {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.btns button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.add-cart {
+  background: #ffd814;
+}
+
+.buy-now {
+  background: #f08804;
+  color: white;
+}
     .product-card h4 {
       margin: 10px 0 5px;
       font-size: 16px;

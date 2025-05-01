@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>سامسونج أوديسي G6</title>
   <style>
-   body {
+  body {
   font-family: Arial;
   background: #f4f4f4;
   margin: 0;
@@ -28,7 +28,8 @@
 
 .gallery img {
   width: 100%;
-  max-height: 400px;
+  height: auto; /* اجعل الارتفاع مرنًا */
+  max-height: none; /* إزالة الحد الأقصى للارتفاع */
   border-radius: 10px;
   object-fit: contain;
 }
@@ -36,13 +37,13 @@
 /* تحسين القياسات للهواتف */
 @media (max-width: 768px) {
   .gallery img {
-    max-height: 250px; /* تقليل الارتفاع للصورة على شاشات التابلت */
+    height: auto; /* إزالة القيود على الارتفاع ليكون مرن */
   }
 }
 
 @media (max-width: 480px) {
   .gallery img {
-    max-height: 200px; /* تقليل الارتفاع أكثر على الهواتف الصغيرة */
+    height: auto; /* إزالة القيود على الارتفاع ليكون مرن */
   }
 }
 
@@ -96,6 +97,15 @@
   border-radius: 6px;
   font-size: 1em;
   cursor: pointer;
+}
+
+.add-cart {
+  background: #ffd814;
+}
+
+.buy-now {
+  background: #f08804;
+  color: white;
 }
 
 .add-cart {
