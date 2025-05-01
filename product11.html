@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
+    .container {
+      max-width: 900px; margin: auto; background: #fff; padding: 20px;
+      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .gallery { position: relative; text-align: center; }
+    .gallery img {
+      width: 100%; max-height: 400px; border-radius: 10px; object-fit: contain;
+    }
+    .buttons button {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5); color: white; border: none;
+      padding: 10px; cursor: pointer; font-size: 20px;
+    }
+    .buttons .prev { left: 10px; }
+    .buttons .next { right: 10px; }
+
+    .desc { margin-top: 20px; font-size: 1.1em; color: #333; line-height: 1.6; text-align: right; }
+    .price { font-size: 2em; color: #111; margin: 20px 0; }
+
+    .btns { display: flex; gap: 15px; margin-top: 20px; justify-content: flex-end; }
+    .btns button {
+      padding: 15px 25px; border: none; border-radius: 6px;
+      font-size: 1em; cursor: pointer;
+    }
+    .add-cart { background: #ffd814; }
+    .buy-now { background: #f08804; color: white; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>  الأثقال القابلة للتعديل (Adjustable Dumbbells)</h2>
+    <div class="gallery">
+      <img id="mainImage" src="https://m.media-amazon.com/images/I/71pAMzGvHkL._AC_SX466_.jpg" alt=" الأثقال القابلة للتعديل (Adjustable Dumbbells)">
+      <div class="buttons">
+        <button class="prev" onclick="prevImage()">❮</button>
+        <button class="next" onclick="nextImage()">❯</button>
+      </div>
+    </div>
+  
+    <div class="price" style="color: rgb(121, 121, 113); font-size: 18px; font-weight: bold;">DA 40,500 DZD</div>
+  
+    <div class="desc">
+      أثقال قابلة للتعديل توفر لك راحة ومرونة في تمارينك المنزلية! مع قدرة على تعديل الوزن بين 5 إلى 50 كجم، تتيح لك هذه الأثقال تخصيص مستوى التمرين وفقاً لاحتياجاتك. تصميمها المدمج والمواد المتينة تجعلها مثالية للاستخدام اليومي، سواء كنت مبتدئًا أو محترفًا، وتضمن لك تمرينًا فعالًا ومريحًا في كل مرة.<br>
+    
+      <span style="color: rgb(235, 219, 5);">★★★★★</span>  تقييم –  4.6/5.
+    </div>
+  
+    
+  
+  <div class="desc" style="font-size: 14px; line-height: 1.6;">
+    <h3> المواصفات التقنية</h3>
+    <ul>
+      <ul>
+        <li><strong>الوزن القابل للتعديل:</strong> 5-50 كجم (حسب الطراز).</li>
+        <li><strong>الطول:</strong> قابل للتعديل بسهولة باستخدام آلية دوران أو أزرار.</li>
+        <li><strong>الهيكل:</strong> مصنوع من المعدن المقاوم للصدأ مع قبضة مطاطية مريحة.</li>
+        <li><strong>التخزين:</strong> يأتي مع حافظة تخزين مدمجة أو قاعدة لسهولة التنظيم.</li>
+        <li><strong>الاحتياجات:</strong> مناسب لجميع مستويات المستخدمين من المبتدئين إلى المتقدمين.</li>
+        <li><strong>التمارين المدعومة:</strong> تمارين عضلات الصدر، الأكتاف، الذراعين، الساقين، والبطن.</li>
+      </ul>
+    
+    </ul>
+  
+    <h3>✅ المميزات البارزة</h3>
+    <ul>
+      <li><strong>تحكم سريع في الوزن:</strong> يمكنك ضبط الوزن بكل سهولة باستخدام آلية تدوير أو أزرار فورية لتغيير الوزن بين التمرين والآخر.</li>
+      <li><strong>تصميم مدمج:</strong> توفير المساحة بشكل كبير مقارنة بالأثقال التقليدية التي تحتاج إلى مساحة كبيرة للتخزين.</li>
+      <li><strong>مواد عالية الجودة:</strong> يتم تصنيع الأثقال من مواد متينة وطويلة العمر لضمان استخدامها لفترات طويلة.</li>
+      <li><strong>راحة في الاستخدام:</strong> قبضة مطاطية مريحة لليد لتقليل الضغط على المفاصل وضمان راحة أثناء التمرين.</li>
+      <li><strong>مثالي للمبتدئين والمتقدمين:</strong> يمكن ضبط الوزن حسب مستوى القوة والتدريب الشخصي.</li>
+    </ul>
+  </div>
+  
+    <div class="btns">
+      <button class="add-cart">أضف إلى السلة</button>
+      <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
+    </div>
+  </div>
+
+<script>
+  const images = [
+    "images/product1.jpg",
+    "images/product2.jpg",
+    "images/product3.jpg"
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
+
+</body>
+</html>
