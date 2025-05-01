@@ -9,17 +9,42 @@
       max-width: 900px; margin: auto; background: #fff; padding: 20px;
       border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .gallery { position: relative; text-align: center; }
-    .gallery img {
-      width: 100%; max-height: 400px; border-radius: 10px; object-fit: contain;
+    .gallery {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .slide {
+    width: 400px;
+    border-radius: 10px;
+  }
+
     }
     .buttons button {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.5); color: white; border: none;
-      padding: 10px; cursor: pointer; font-size: 20px;
-    }
-    .buttons .prev { left: 10px; }
-    .buttons .next { right: 10px; }
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    left: 10px; /* قريب من الطرف الأيسر */
+  }
+
+  .buttons .next {
+    right: 10px; /* قريب من الطرف الأيمن */
+  }
+
+  .buttons button:hover {
+    background-color: #ccc;
+  }
 
     .desc { margin-top: 20px; font-size: 1.1em; color: #333; line-height: 1.6; text-align: right; }
     .price { font-size: 2em; color: #111; margin: 20px 0; }
@@ -37,12 +62,23 @@
 
 <div class="container">
   <h1>🖥️ شاشة Samsung Odyssey OLED G6 (طراز G60SD) – قمة تجربة الألعاب البصرية لعام 2024</h1>
-  <div class="gallery">
-    <img id="mainImage" src="https://m.media-amazon.com/images/I/71wF7YDIQwL._AC_SX466_.jpg" >
-    <div class="buttons">
-      <button class="prev" onclick="prevImage()">❮</button>
-      <button class="next" onclick="nextImage()">❯</button>
+
+
+  <div class="buttons">
+    <div class="gallery">
+      <img class="slide" src="images/produits/01.jpg" style="display: block;">
+      <img class="slide" src="images/produits/02.jpg" style="display: none;">
+      <img class="slide" src="images/produits/03.jpg" style="display: none;">
+      <img class="slide" src="images/produits/04.jpg" style="display: none;">
+      <img class="slide" src="images/produits/05.jpg" style="display: none;">
+    
+     
+        <button onclick="prevImage()">❮</button>
+        <button onclick="nextImage()">❯</button>
+      </div>
     </div>
+
+
   
   
   </div>
@@ -105,24 +141,25 @@
 </div>
 
 <script>
-    const images = [
-      "images/product1.jpg",
-      "images/product2.jpg",
-      "images/product3.jpg"
-    ];
-    let index = 0;
-    const img = document.getElementById("mainImage");
-  
-    function nextImage() {
-      index = (index + 1) % images.length;
-      img.src = images[index];
-    }
-  
-    function prevImage() {
-      index = (index - 1 + images.length) % images.length;
-      img.src = images[index];
-    }
-  </script>
+  const slides = document.querySelectorAll('.slide');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'block' : 'none';
+    });
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+</script>
 
 </body>
 </html>
