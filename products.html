@@ -19,29 +19,29 @@
     margin: auto;
     background: #fff;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 100px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .products-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0px; /* تقليل الفجوة بين البطاقات */
+    
 }
 
 .product-card {
     position: relative;
-    width: 150px;
-    height: 250px;
+    width: 100px;
+    height: 150px;
     background-size: cover;
     background-position:auto;
-    border-radius: 10px;
+    border-radius: 0px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 15px;
+    padding: 28px;
     color: white;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
@@ -63,7 +63,7 @@
     padding: 0;
     border-radius: 0;
     color: white;
-    font-size: 15px;
+    font-size: 10px;
     font-weight: bold;
 }
 
