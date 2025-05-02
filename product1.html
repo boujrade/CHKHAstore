@@ -38,7 +38,7 @@
 
     <div class="container">
       <h2 > 🖥️ شاشة Samsung Odyssey OLED G6 (طراز G60SD) – قمة تجربة الألعاب البصرية لعام 2024</h1>
-      <div class="gallery"</h2>
+    
       <div class="gallery">
         <img id="mainImage" src="/images/produits/html.001.jpg" ,  alt="راوتر TP-Link">
         <div class="buttons">
@@ -105,6 +105,10 @@
   <div class="btns">
     <button class="add-cart">أضف إلى السلة</button>
     <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
+    <button class="share-btn" onclick="shareProduct('سامسونج أوديسي G6')">🔗 مشاركة</button>
+  </div>
+  
+    
   </div>
 </div>
 
@@ -126,6 +130,26 @@
   function prevImage() {
     index = (index - 1 + images.length) % images.length;
     img.src = images[index];
+  }
+</script>
+
+<script>
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
+
+  function goToDetails(name) {
+    alert(`سيتم توجيهك إلى صفحة تفاصيل: ${name} (مثال فقط)`);
+    // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
   }
 </script>
 

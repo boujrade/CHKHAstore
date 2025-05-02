@@ -5,80 +5,80 @@
   <title>منتجات متجرنا</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-   body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  padding: 20px;
-  direction: rtl;
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    direction: rtl;
+    text-align: right; /* تحسين توافق RTL */
 }
 
 .container {
-  max-width: 900px;
-  margin: auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* تنسيق البطاقات */
 .products-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
 }
 
 .product-card {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 15px;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 .product-card:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .product-card img {
-  display: none; /* إخفاء الصورة الأصلية */
+    display: none;
 }
 
 .product-card h4,
 .product-card .rating,
 .product-card p,
 .product-card .share-btn {
-  background: rgba(0, 0, 0, 0.6); /* تحسين وضوح النص */
-  padding: 5px;
-  border-radius: 5px;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-background-size: cover;
-background-position: center;
-
-
-/* تحسين القياسات للهواتف */
 @media (max-width: 768px) {
-  .products-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 500px) {
-  .products-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
+    .products-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    /* تعديل بحيث تكون البطاقات مناسبة للشاشات الصغيرة */
+}
   </style>
 </head>
 <body>
@@ -88,82 +88,60 @@ background-position: center;
 <div class="products-container">
 
 <div class="product-card" style="background-image: url('images/produits/html.01.jpg');" onclick="window.location.href='product1.html'">
-  <h4>شاشة Samsung Odyssey OLED G6</h4>
-  <div class="rating">⭐⭐⭐⭐☆ (4.2)</div>
-  <p>DA 95000 DZD</p>
-  <button class="share-btn" onclick="shareProduct('شاشة Samsung Odyssey OLED G6')">🔗 مشاركة</button>
+  <h4>شاشة Samsung Odyssey OLED G6 <br> DA 95000 DZD <br>⭐⭐⭐⭐⭐ (5/5)
+  </h4>
 </div>
 
+
 <div class="product-card" style="background-image: url('images/produits/html.02.jpg');" onclick="window.location.href='product2.html'">
-  <h4>راوتر TP-Link Archer BE550</h4>
-  <div class="rating">⭐⭐⭐⭐⭐ (5.0)</div>
-  <p>DA 7500 DZD</p>
-  <button class="share-btn" onclick="shareProduct('راوتر TP-Link Archer BE550')">🔗 مشاركة</button>
+  <h4>راوتر TP-Link Archer BE550 <br> DA 7500 DZD <br>⭐⭐⭐⭐⭐ (5/5)
+     
+  </h4> 
+ 
 </div>
 
 <div class="product-card" style="background-image: url('images/produits/html.03.jpg');" onclick="window.location.href='product3.html'">
-  <h4>لوحة مفاتيح Razer</h4>
-  <div class="rating">⭐⭐⭐⭐☆ (4.5)</div>
-  <p>DA 7500 DZD</p>
-  <button class="share-btn" onclick="shareProduct('لوحة مفاتيح Razer')">🔗 مشاركة</button>
+  <h4>لوحة مفاتيح Razer <br>
+    DA 7500 DZD
+    <br>⭐⭐⭐⭐⭐ (5/5)
+  </h4>
 </div>
 
 <div class="product-card" style="background-image: url('images/produits/html.04.jpg');" onclick="window.location.href='product4.html'">
-  <h4>فأرة Logitech G Pro</h4>
-  <div class="rating">⭐⭐⭐⭐☆ (4.6)</div>
-  <p>DA 1900 DZD</p>
-  <button class="share-btn" onclick="shareProduct('فأرة Logitech G Pro')">🔗 مشاركة</button>
+  <h4>فأرة Logitech G Pro   <br> DA 1900 DZD <br>⭐⭐⭐⭐⭐ (5/5)
+ </h4>
+  
+  
 </div>
 
 <div class="product-card" style="background-image: url('images/produits/html.05.jpg');" onclick="window.location.href='product5.html'">
-  <h4>كاميرا HD 1080p</h4>
-  <div class="rating">⭐⭐⭐☆☆ (3.8)</div>
-  <p>DA 49000 DZD</p>
-  <button class="share-btn" onclick="shareProduct('كاميرا HD 1080p')">🔗 مشاركة</button>
+  <h4>كاميرا HD 1080p  <br> DA 49000 DZD<br>⭐⭐⭐⭐⭐ (5/5)
+
+  </h4>
+  
+  
 </div>
 
 <div class="product-card" style="background-image: url('images/produits/html.06.jpg');" onclick="window.location.href='product6.html'">
-  <h4>سماعات رأس لاسلكية Baseus Bowie H1 ANC</h4>
-  <div class="rating">⭐⭐⭐⭐☆ (4.4)</div>
-  <p>DA 49000 DZD</p>
-  <button class="share-btn" onclick="shareProduct('سماعات Baseus Bowie H1 ANC')">🔗 مشاركة</button>
+  <h4>سماعات رأس لاسلكية Baseus Bowie H1 ANC <br> DA 49000 DZD<br>⭐⭐⭐⭐⭐ (5/5)
+
+  </h4>
+  
 </div>
 
 <div class="product-card" style="background-image: url('images/produits/html.010.jpg');" onclick="window.location.href='product10.html'">
-  <h4>كاميرا مراقبة منزلية ذكية</h4>
-  <div class="rating">⭐⭐⭐⭐☆ (4.4)</div>
-  <p>DA 9800 DZD</p>
-  <button class="share-btn" onclick="shareProduct('كاميرا مراقبة منزلية ذكية')">🔗 مشاركة</button>
+  <h4>كاميرا مراقبة منزلية ذكية <br> DA 9800 DZD <br>⭐⭐⭐⭐⭐ (5/5)
+
+  </h4>
 </div>
 
 <div class="product-card" style="background-image: url('images/produits/html.011.jpg');" onclick="window.location.href='product11.html'">
-  <h4>الأثقال القابلة للتعديل (Adjustable Dumbbells)</h4>
-  <div class="rating">⭐⭐⭐⭐☆ (4.4)</div>
-  <p>DA 40,500 DZD</p>
-  <button class="share-btn" onclick="shareProduct('الأثقال القابلة للتعديل')">🔗 مشاركة</button>
+  <h4>الأثقال القابلة للتعديل (Adjustable Dumbbells) <br> DA 40,500 DZD <br>⭐⭐⭐⭐⭐ (5/5)
+
+  </h4>
 </div>
 
 </div>
-
-<script>
-  function shareProduct(name) {
-    const url = window.location.href;
-    if (navigator.share) {
-      navigator.share({
-        title: name,
-        text: `اطلع على هذا المنتج: ${name}`,
-        url: url
-      }).catch((err) => console.log("لم تتم المشاركة:", err));
-    } else {
-      alert("المشاركة غير مدعومة على هذا المتصفح.");
-    }
-  }
-
-  function goToDetails(name) {
-    alert(`سيتم توجيهك إلى صفحة تفاصيل: ${name} (مثال فقط)`);
-    // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
-  }
-</script>
 
 </body>
 </html>

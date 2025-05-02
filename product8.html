@@ -76,6 +76,7 @@
     <div class="btns">
       <button class="add-cart">أضف إلى السلة</button>
       <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
+      <button class="share-btn" onclick="shareProduct(' Power Bank بسعة عالية وتقنيات شحن متقدمة ')">🔗 مشاركة</button>
     </div>
   </div>
 
@@ -114,5 +115,12 @@
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
   }
+
+  function goToDetails(name) {
+    alert(`سيتم توجيهك إلى صفحة تفاصيل: ${name} (مثال فقط)`);
+    // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
+  }
+</script>
+
 </body>
 </html>

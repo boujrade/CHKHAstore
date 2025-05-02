@@ -82,6 +82,8 @@
   <div class="btns">
     <button class="add-cart">أضف إلى السلة</button>
     <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
+    <button class="share-btn" onclick="shareProduct('لوحة مفاتيح Razer')">🔗 مشاركة</button>
+  
   </div>
 </div>
 
@@ -110,6 +112,26 @@
       img.src = images[index];
     }
   </script>
+
+<script>
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
+
+  function goToDetails(name) {
+    alert(`سيتم توجيهك إلى صفحة تفاصيل: ${name} (مثال فقط)`);
+    // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
+  }
+</script>
 
 </body>
 </html>
