@@ -31,6 +31,39 @@
     }
     .add-cart { background: #ffd814; }
     .buy-now { background: #f08804; color: white; }
+
+
+    .share-btn, .buy-btn, .cart-btn {
+    font-size: 18px; /* تكبير حجم النص */
+    padding: 12px 15px; /* زيادة المساحة داخل الزر */
+    width: 10%; /* جعل الزر يأخذ عرض العنصر الأب */
+    border-radius: 8px; /* تحسين الزوايا */
+}
+
+.buy-now button {
+    font-size: 28px; /* تكبير حجم النص */
+    padding: 12px 28px; /* توسيع المساحة داخل الزر */
+    background-color: #ff7300; /* لون برتقالي مميز */
+    color: white; /* لون النص */
+    border: 3px solid #e68900; /* إضافة إطار برتقالي داكن */
+    border-radius: 10px; /* زوايا ناعمة */
+    font-weight: bold; /* جعل النص أكثر وضوحًا */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.buy-now button:hover {
+    background: #00e660; /* تغيير لون الخلفية عند التفاعل */
+    transform: scale(1.3); /* تكبير الزر عند تمرير الماوس */
+    font-size: 27px; /* تكبير حجم النص */
+}
+
+.share-btn , .buy-btn {
+      background: #ee780a;
+      color: #f5f3f1;
+      font-size: 13px;
+    }
+
   </style>
 </head>
 <body>
@@ -78,15 +111,13 @@
         <li>استهلاك طاقة منخفض</li>
       </ul>
     </div>
+    <div class="btns">
+      <button class="share-btn" onclick="shareProduct(' مروحة مكتبية ذكية – SmartDesk Fan S3')">🔗 مشاركة</button>
+      <button class="add-cart">أضف إلى السلة</button>
+      <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
+     
+    </div>
   </div>
-  
-  <div class="btns">
-    <button class="add-cart">أضف إلى السلة</button>
-   
-    <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
-    <button class="share-btn" onclick="shareProduct('مروحة مكتبية ذكية – SmartDesk Fan S3 ')">🔗 مشاركة</button>
-  </div>
-</div>
 
 <script>
     const images = [
