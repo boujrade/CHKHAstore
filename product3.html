@@ -1,181 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>لوحة مفاتيح Razer</title>
-  <style>
-    body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
-    .container {
-      max-width: 900px; margin: auto; background: #fff; padding: 20px;
-      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .gallery { position: relative; text-align: center; }
-    .gallery img {
-      width: 100%; max-height: 400px; border-radius: 10px; object-fit: contain;
-    }
-    .buttons button {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.5); color: white; border: none;
-      padding: 10px; cursor: pointer; font-size: 20px;
-    }
-    .buttons .prev { left: 10px; }
-    .buttons .next { right: 10px; }
-
-    .desc { margin-top: 20px; font-size: 1.1em; color: #333; line-height: 1.6; text-align: right; }
-    .price { font-size: 2em; color: #111; margin: 20px 0; }
-
-    .btns { display: flex; gap: 15px; margin-top: 20px; justify-content: flex-end; }
-    .btns button {
-      padding: 15px 25px; border: none; border-radius: 6px;
-      font-size: 1em; cursor: pointer;
-    }
-    .add-cart { background: #ffd814; }
-    .buy-now { background: #f08804; color: white; }
-
-    .share-btn {
-      background: #ee780a;
-      color: #f5f3f1;
-      font-size: 13px;
-    }
-
-    .share-btn, .buy-btn, .cart-btn {
-    font-size: 18px; /* تكبير حجم النص */
-    padding: 12px 15px; /* زيادة المساحة داخل الزر */
-    width: 10%; /* جعل الزر يأخذ عرض العنصر الأب */
-    border-radius: 8px; /* تحسين الزوايا */
-}
-
-.buy-now button {
-    font-size: 28px; /* تكبير حجم النص */
-    padding: 12px 28px; /* توسيع المساحة داخل الزر */
-    background-color: #ff7300; /* لون برتقالي مميز */
-    color: white; /* لون النص */
-    border: 3px solid #e68900; /* إضافة إطار برتقالي داكن */
-    border-radius: 10px; /* زوايا ناعمة */
-    font-weight: bold; /* جعل النص أكثر وضوحًا */
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.buy-now button:hover {
-    background: #00e660; /* تغيير لون الخلفية عند التفاعل */
-    transform: scale(1.3); /* تكبير الزر عند تمرير الماوس */
-    font-size: 27px; /* تكبير حجم النص */
-}
-
-</style>
-</head>
-<body>
-
-<div class="container">
-  <h2>لوحة مفاتيح Razer BlackWidow V4 Pro</h2>
-  <div class="gallery">
-    <img id="mainImage" src= "images/produits/html.03.jpg" alt="لوحة مفاتيح Razer" loading="lazy"  >
-    <div class="buttons">
-      <button class="prev" onclick="prevImage()">❮</button>
-      <button class="next" onclick="nextImage()">❯</button>
-    </div>
-  </div>
-
-  <div class="price" style="color: rgb(121, 121, 113); font-size: 18px; font-weight: bold;">DA 7500 DZD</div>
-
-  <div class="desc">
-    لوحة مفاتيح ميكانيكية بإضاءة RGB قابلة للتخصيص بالكامل.<br>
-    مفاتيح Razer Green Switch للحصول على استجابة سريعة ودقة عالية.<br>
-    تحتوي على أزرار ماكرو قابلة للبرمجة لتعزيز أداء اللاعبين المحترفين.<br>
-    <span style="color: rgb(235, 219, 5);">★★★★★</span>.
-  </div>
-
-
-  <div class="desc" style="font-size: 14px; line-height: 1.6;">
-    <h3>🎮 المواصفات التقنية</h3>
-    <ul>
-      <li><strong>المفاتيح:</strong> مفاتيح ميكانيكية Razer Green (أو اختيارية Razer Yellow أو Razer Orange)</li>
-      <li><strong>التوصيل:</strong> عبر USB Type-C و USB Type-A (منفذ مزدوج)</li>
-      <li><strong>الإضاءة:</strong> إضاءة Razer Chroma RGB مع 16.8 مليون لون قابلة للتخصيص</li>
-      <li><strong>الهيكل:</strong> تصميم صلب مع هيكل معدني لتحمل الاستخدام المكثف</li>
-      <li><strong>الأنماط الخاصة:</strong> دعم الماكرو والنقر السريع (n-Key Rollover)</li>
-      <li><strong>الراحة:</strong> دعامة مريحة لراحة اليد</li>
-      <li><strong>المنافذ الإضافية:</strong> منفذ USB إضافي لتوصيل أجهزة أخرى</li>
-      <li><strong>الوزن:</strong> ثقيلة لزيادة الاستقرار أثناء الاستخدام</li>
-    </ul>
-    
-    <h3>✅ المميزات البارزة</h3>
-    <ul>
-      <li><strong>أداء استثنائي:</strong> مفاتيح ميكانيكية توفر استجابة فورية وتدوم طويلاً.</li>
-      <li><strong>إضاءة قابلة للتخصيص:</strong> تخصيص الإضاءة باستخدام برنامج Razer Synapse</li>
-      <li><strong>تصميم متين:</strong> الهيكل المعدني يضمن المتانة والموثوقية.</li>
-      <li><strong>راحة اليد:</strong> دعامة قابلة للفصل توفر راحة أكبر أثناء الاستخدام الطويل.</li>
-      <li><strong>دعم الماكرو:</strong> إمكانية تخصيص الأزرار وتنفيذ الأوامر بسرعة.</li>
-    </ul>
-    
-  </div>
-
-  <div class="btns">
-
-    <button class="share-btn" onclick="shareProduct('لوحة مفاتيح Razer')">🔗 مشاركة</button>
-    <button class="add-cart">أضف إلى السلة</button>
-    <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
-   
-  
-  </div>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("img.lazy-img").forEach(img => {
-      img.src = img.dataset.src;
-      img.classList.add("loaded");
-  });
-});
-</script>
-
-
-<script>
-    const images = [
-     
-      "images/produits/html.003.jpg",
-      "images/produits/html.0003.jpg",
-      "images/produits/html.00003.jpg",
-      "images/produits/html.000003.jpg",
-      "images/produits/html.0000003.jpg",
-      "images/produits/html.00000003.jpg",
-     
-                   ]
-                   
-      let index = 0;
-    const img = document.getElementById("mainImage");
-  
-    function nextImage() {
-      index = (index + 1) % images.length;
-      img.src = images[index];
-    }
-  
-    function prevImage() {
-      index = (index - 1 + images.length) % images.length;
-      img.src = images[index];
-    }
-  </script>
-
-<script>
-  function shareProduct(name) {
-    const url = window.location.href;
-    if (navigator.share) {
-      navigator.share({
-        title: name,
-        text: `اطلع على هذا المنتج: ${name}`,
-        url: url
-      }).catch((err) => console.log("لم تتم المشاركة:", err));
-    } else {
-      alert("المشاركة غير مدعومة على هذا المتصفح.");
-    }
-  }
-
-  function goToDetails(name) {
-    alert(`سيتم توجيهك إلى صفحة تفاصيل: ${name} (مثال فقط)`);
-    // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
-  }
-</script>
-
-</body>
-</html>
