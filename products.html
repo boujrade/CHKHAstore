@@ -26,9 +26,10 @@
 .products-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 0px; /* تقليل الفجوة بين البطاقات */
-    
+    gap: 17px; /* تقليل الفجوة بين البطاقات */
+    padding: 20px;
 }
+
 
 .product-card {
     position: relative;
@@ -45,9 +46,10 @@
     color: white;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+   
 }
 
-.product-card:hover {
+product-card:hover {
     transform: scale(1.05);
 }
 
@@ -60,7 +62,7 @@
 .product-card p,
 .product-card .share-btn {
     background: none;
-    padding: 0;
+    padding: 5px;
     border-radius: 0;
     color: white;
     font-size: 10px;
@@ -86,62 +88,50 @@
 <h1>منتجاتنا</h1>
 
 <div class="products-container">
+  <div class="product-card" data-bg="images/produits/html.01.jpg" onclick="window.location.href='product1.html'">
+      <h4>شاشة Samsung Odyssey OLED G6 <br> DA 95000 DZD <br>⭐⭐⭐⭐⭐ (5/5)</h4>
+  </div>
 
-<div class="product-card" style="background-image: url('images/produits/html.01.jpg');" onclick="window.location.href='product1.html'">
-  <h4>شاشة Samsung Odyssey OLED G6 <br> DA 95000 DZD <br>⭐⭐⭐⭐⭐ (5/5)
-  </h4>
+  <div class="product-card" data-bg="images/produits/html.02.jpg" onclick="window.location.href='product2.html'">
+      <h4>راوتر TP-Link Archer BE550 <br> DA 7500 DZD <br>⭐⭐⭐⭐⭐ (5/5)</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/produits/html.03.jpg" onclick="window.location.href='product3.html'">
+      <h4>لوحة مفاتيح Razer <br> DA 7500 DZD <br>⭐⭐⭐⭐⭐ (5/5)</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/produits/html.04.jpg" onclick="window.location.href='product4.html'">
+      <h4>فأرة Logitech G Pro   <br> DA 1900 DZD <br>⭐⭐⭐⭐⭐ (5/5)</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/produits/html.05.jpg" onclick="window.location.href='product5.html'">
+      <h4>كاميرا HD 1080p  <br> DA 49000 DZD<br>⭐⭐⭐⭐⭐ (5/5)</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/produits/html.06.jpg" onclick="window.location.href='product6.html'">
+      <h4>سماعات رأس لاسلكية Baseus Bowie H1 ANC <br> DA 49000 DZD<br>⭐⭐⭐⭐⭐ (5/5)</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/produits/html.010.jpg" onclick="window.location.href='product10.html'">
+      <h4>كاميرا مراقبة منزلية ذكية <br> DA 9800 DZD <br>⭐⭐⭐⭐⭐ (5/5)</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/produits/html.011.jpg" onclick="window.location.href='product11.html'">
+      <h4>الأثقال القابلة للتعديل (Adjustable Dumbbells) <br> DA 40,500 DZD <br>⭐⭐⭐⭐⭐ (5/5)</h4>
+  </div>
 </div>
 
+<script>
 
-<div class="product-card" style="background-image: url('images/produits/html.02.jpg');" onclick="window.location.href='product2.html'">
-  <h4>راوتر TP-Link Archer BE550 <br> DA 7500 DZD <br>⭐⭐⭐⭐⭐ (5/5)
-     
-  </h4> 
- 
-</div>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".product-card").forEach(card => {
+        const bgImage = card.getAttribute("data-bg");
+        card.style.backgroundImage = `url(${bgImage})`;
+    });
+});
 
-<div class="product-card" style="background-image: url('images/produits/html.03.jpg');" onclick="window.location.href='product3.html'">
-  <h4>لوحة مفاتيح Razer <br>
-    DA 7500 DZD
-    <br>⭐⭐⭐⭐⭐ (5/5)
-  </h4>
-</div>
 
-<div class="product-card" style="background-image: url('images/produits/html.04.jpg');" onclick="window.location.href='product4.html'">
-  <h4>فأرة Logitech G Pro   <br> DA 1900 DZD <br>⭐⭐⭐⭐⭐ (5/5)
- </h4>
-  
-  
-</div>
-
-<div class="product-card" style="background-image: url('images/produits/html.05.jpg');" onclick="window.location.href='product5.html'">
-  <h4>كاميرا HD 1080p  <br> DA 49000 DZD<br>⭐⭐⭐⭐⭐ (5/5)
-
-  </h4>
-  
-  
-</div>
-
-<div class="product-card" style="background-image: url('images/produits/html.06.jpg');" onclick="window.location.href='product6.html'">
-  <h4>سماعات رأس لاسلكية Baseus Bowie H1 ANC <br> DA 49000 DZD<br>⭐⭐⭐⭐⭐ (5/5)
-
-  </h4>
-  
-</div>
-
-<div class="product-card" style="background-image: url('images/produits/html.010.jpg');" onclick="window.location.href='product10.html'">
-  <h4>كاميرا مراقبة منزلية ذكية <br> DA 9800 DZD <br>⭐⭐⭐⭐⭐ (5/5)
-
-  </h4>
-</div>
-
-<div class="product-card" style="background-image: url('images/produits/html.011.jpg');" onclick="window.location.href='product11.html'">
-  <h4>الأثقال القابلة للتعديل (Adjustable Dumbbells) <br> DA 40,500 DZD <br>⭐⭐⭐⭐⭐ (5/5)
-
-  </h4>
-</div>
-
-</div>
+</script>
 
 </body>
 </html>

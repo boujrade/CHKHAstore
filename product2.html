@@ -69,7 +69,7 @@
 <div class="container">
   <h2>راوتر TP-Link Archer BE550</h2>
   <div class="gallery">
-    <img id="mainImage" src="/images/produits/html.02.jpg" ,  alt="راوتر TP-Link">
+    <img id="mainImage" src="/images/produits/html.02.jpg"   alt="راوتر TP-Link" loading="lazy"  >
     <div class="buttons">
       <button class="prev" onclick="prevImage()">❮</button>
       <button class="next" onclick="nextImage()">❯</button>
@@ -133,7 +133,14 @@
   
   </div>
 </div>
-
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
 <script>
     const images = [
       "images/produits/html.02.jpg",

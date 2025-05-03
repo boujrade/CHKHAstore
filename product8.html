@@ -70,7 +70,7 @@
   <div class="container">
     <h2>  Power Bank بسعة عالية وتقنيات شحن متقدمة</h2>
     <div class="gallery">
-      <img id="mainImage" src="images/produits/html.08.jpg", >
+      <img id="mainImage" src="images/produits/html.08.jpg"  loading="lazy"  >
       <div class="buttons">
         <button class="prev" onclick="prevImage()">❮</button>
         <button class="next" onclick="nextImage()">❯</button>
@@ -112,6 +112,17 @@
      
     </div>
   </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("img.lazy-img").forEach(img => {
+        img.src = img.dataset.src;
+        img.classList.add("loaded");
+    });
+});
+</script>
+
 
   <script>
     const images = [

@@ -70,7 +70,7 @@
 <div class="container">
   <h2>لوحة مفاتيح Razer BlackWidow V4 Pro</h2>
   <div class="gallery">
-    <img id="mainImage" src= "images/produits/html.03.jpg" alt="لوحة مفاتيح Razer">
+    <img id="mainImage" src= "images/produits/html.03.jpg" alt="لوحة مفاتيح Razer" loading="lazy"  >
     <div class="buttons">
       <button class="prev" onclick="prevImage()">❮</button>
       <button class="next" onclick="nextImage()">❯</button>
@@ -120,6 +120,16 @@
   
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
 
 <script>
     const images = [

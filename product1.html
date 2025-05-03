@@ -86,7 +86,7 @@
       <h2 > 🖥️ شاشة Samsung Odyssey OLED G6 (طراز G60SD) – قمة تجربة الألعاب البصرية لعام 2024</h1>
     
       <div class="gallery">
-        <img id="mainImage" src="/images/produits/html.001.jpg" ,  alt="راوتر TP-Link">
+        <img id="mainImage" src="/images/produits/html.001.jpg" alt="راوتر TP-Link" loading="lazy"  >
         <div class="buttons">
           <button class="prev" onclick="prevImage()">❮</button>
           <button class="next" onclick="nextImage()">❯</button>
@@ -159,6 +159,15 @@
     
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
 
 <script>
   const images = [

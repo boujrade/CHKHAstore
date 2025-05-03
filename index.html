@@ -291,7 +291,19 @@ body {
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
     }
+    .product-card img {
+    max-width: 100%;
+    height: auto;
+}
 
+.lazy-img {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.lazy-img.loaded {
+    opacity: 1;
+}
     
     /* الأسعار */
     .price {
@@ -460,7 +472,7 @@ button {
  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="images/html.jjj.jpg" style="height: 60px; max-height: 8vh; margin-left: 8px;" alt="شعار المتجر">
+        <img src="images/html.jjj.jpg" style="height: 60px; max-height: 8vh; margin-left: 8px;" alt="شعار المتجر" loading="lazy" >
        
        استكشف أفضل عروضنا الآن
       </a>
@@ -505,54 +517,51 @@ button {
 <div class="moving-text">🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉</div>
 
 
-  <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر">
-
+  <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر" loading="lazy" >
  
-  
   <div class="slider">
-    <img src="images/html.trj.jpg" class="slide active">
-    <img src="images/html.rtj.jpg" class="slide">
-    <img src="images/html.jrt.jpg" class="slide">
-    <img src="images/html.uyt.jpg" class="slide">
-    <img src="images/html.qaz.jpg" class="slide">
-    <img src="images/html.edc.jpg" class="slide">
-    <img src="images/html.rfv.jpg" class="slide">
-    <img src="images/html.tgb.jpg" class="slide">
-    <img src="images/html.yhn.jpg" class="slide">
-    <img src="images/html.ujm.jpg" class="slide">
-    <img src="images/html.ik,.jpg" class="slide">
-    <img src="images/html.ol..jpg" class="slide">
-    <img src="images/html.zaq.jpg" class="slide">
-    <img src="images/html.xsw.jpg" class="slide">
-    <img src="images/html.nhy.jpg" class="slide">
-    <img src="images/html.mju.jpg" class="slide">
-    <img src="images/html.poi.jpg" class="slide">
-    <img src="images/html.awd.jpg" class="slide">
-    <img src="images/html.drg.jpg" class="slide">
-    <img src="images/html.gyj.jpg" class="slide">
-    <img src="images/html.jil.jpg" class="slide">
-    <img src="images/html.qse.jpg" class="slide">
-    <img src="images/html.eft.jpg" class="slide">
-    <img src="images/html.thu.jpg" class="slide">
-    <img src="images/html.uko.jpg" class="slide">
-    <img src="images/html.jki.jpg" class="slide">
-    <img src="images/html.zsx.jpg" class="slide">
-    <img src="images/html.xdc.jpg" class="slide">
-    <img src="images/html.cfv.jpg" class="slide">
-    <img src="images/html.vgb.jpg" class="slide">
-    <img src="images/html.bhn.jpg" class="slide">
-    <img src="images/html.njm.jpg" class="slide">
-    <img src="images/html.azs.jpg" class="slide">
-    <img src="images/html.sxd.jpg" class="slide">
-    <img src="images/html.dcf.jpg" class="slide">
-    <img src="images/html.fvg.jpg" class="slide">
-    <img src="images/html.gbh.jpg" class="slide">
-    <img src="images/html.hnj.jpg" class="slide">
+    <img src="images/html.trj.jpg" class="slide active"  <img id="mainImage" src="/images/produits/html.001.jpg" ,  alt="راوتر TP-Link">  >
+    <img src="images/html.rtj.jpg" class="slide" loading="lazy"   >
+    <img src="images/html.jrt.jpg" class="slide"  loading="lazy"  >
+    <img src="images/html.uyt.jpg" class="slide"   loading="lazy"  >
+    <img src="images/html.qaz.jpg" class="slide"   loading="lazy"    >
+    <img src="images/html.edc.jpg" class="slide"  loading="lazy"   >   
+    <img src="images/html.rfv.jpg" class="slide"  loading="lazy"  >
+    <img src="images/html.tgb.jpg" class="slide" loading="lazy"   >
+    <img src="images/html.yhn.jpg" class="slide"  loading="lazy"    >
+    <img src="images/html.ujm.jpg" class="slide"   loading="lazy"  >
+    <img src="images/html.ik,.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.ol..jpg" class="slide" loading="lazy"  >
+    <img src="images/html.zaq.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.xsw.jpg" class="slide"  loading="lazy"  >
+    <img src="images/html.nhy.jpg" class="slide" loading="lazy"   >
+    <img src="images/html.mju.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.poi.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.awd.jpg" class="slide" loading="lazy"    >
+    <img src="images/html.drg.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.gyj.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.jil.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.qse.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.eft.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.thu.jpg" class="slide"  loading="lazy"    >
+    <img src="images/html.uko.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.jki.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.zsx.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.xdc.jpg" class="slide" loading="lazy"    >
+    <img src="images/html.cfv.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.vgb.jpg" class="slide"  loading="lazy"    >
+    <img src="images/html.bhn.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.njm.jpg" class="slide"  loading="lazy"    >
+    <img src="images/html.azs.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.sxd.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.dcf.jpg" class="slide"   loading="lazy"  >
+    <img src="images/html.fvg.jpg" class="slide"  loading="lazy"    >
+    <img src="images/html.gbh.jpg" class="slide"  loading="lazy"   >
+    <img src="images/html.hnj.jpg" class="slide"  loading="lazy"    >
 </div>
 
-<script src="script.js"></script><br>
 
-  <img id="special-image" src="images/special-image.jpg" alt="صورة محددة متجاوبة">
+  <img id="special-image" src="images/special-image.jpg" alt="صورة محددة متجاوبة" loading="lazy"   >
   
   
   <div class="moving-text">   "عروض مذهلة"    " منتجات مميزة"     " أسرع خدمة توصيل!</div>
@@ -565,7 +574,7 @@ button {
     <div class="col-md-6 col-lg-4">
       <div class="card position-relative">
         <span class="badge-sale">En vente</span>
-        <img src="images/produits/html.08.jpg" class="card-img-top product-img" alt="حقيبة">
+        <img src="images/produits/html.08.jpg" class="card-img-top product-img" alt="حقيبة"  loading="lazy"  >
         
         <div class="card-body text-center">
           <p class="card-title"> Power Bank بسعة عالية وتقنيات شحن متقدمة</p>
@@ -582,7 +591,7 @@ button {
     <div class="col-md-6 col-lg-4">
       <div class="card position-relative">
         <span class="badge-sale">En vente</span>
-        <img src="images/produits/html.09.jpg" class="card-img-top product-img" alt="حقيبة خصر">
+        <img src="images/produits/html.09.jpg" class="card-img-top product-img" alt="حقيبة خصر"  loading="lazy"  >
         <div class="card-body text-center">
           <p class="card-title" > مروحة مكتبية ذكية – SmartDesk Fan S3 </p>
           <p><span class="old-price">DA 3900 DZD </span></p>
@@ -601,7 +610,7 @@ button {
       <div class="card position-relative">
         <span class="badge-sale">En vente</span>
 
-        <img src="images/produits/html.012.jpg" class="card-img-top product-img" alt="آلة خياطة">
+        <img src="images/produits/html.012.jpg" class="card-img-top product-img" alt="آلة خياطة"  loading="lazy"   >
         <div class="card-body text-center">
           <p class="card-title">ساعة ذكية رياضية مع مراقبة الصحة</p>
           <p class="price">DA 3900.00 DZD</p>
@@ -617,7 +626,7 @@ button {
       <div class="card position-relative">
         <span class="badge-sale">En vente</span>
 
-        <img src="images/produits/html.000013.jpg" class="card-img-top product-img" alt="راديو إسلامي">
+        <img src="images/produits/html.000013.jpg" class="card-img-top product-img" alt="راديو إسلامي"  loading="lazy"   >
         <div class="card-body text-center">
           <p class="card-title" >جهاز عرض محمول (بروجكتور) بدقة 1080 </p>
           <p class="price">DA 4700.00 DZD </p>
@@ -638,7 +647,7 @@ button {
 
 
 
-<img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"><br>
+<img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"   loading="lazy"   ><br>
 <!-- معلومات إضافية -->
 <nav style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
     <ul style="list-style: none; padding: 0; text-align: center;">
@@ -824,6 +833,15 @@ button {
       </ul>
     </div>
   </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("img.lazy-img").forEach(img => {
+        img.src = img.dataset.src;
+        img.classList.add("loaded");
+    });
+});
+</script>
 
    <script>
    const slides = document.querySelectorAll('.slide');

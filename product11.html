@@ -71,7 +71,7 @@
   <div class="container">
     <h2>  الأثقال القابلة للتعديل (Adjustable Dumbbells)</h2>
     <div class="gallery">
-      <img id="mainImage" src="images/produits/html.011.jpg" alt=" الأثقال القابلة للتعديل (Adjustable Dumbbells)">
+      <img id="mainImage" src="images/produits/html.011.jpg" alt=" الأثقال القابلة للتعديل (Adjustable Dumbbells)" loading="lazy"  >
       <div class="buttons">
         <button class="prev" onclick="prevImage()">❮</button>
         <button class="next" onclick="nextImage()">❯</button>
@@ -119,6 +119,17 @@
       
     </div>
   </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("img.lazy-img").forEach(img => {
+        img.src = img.dataset.src;
+        img.classList.add("loaded");
+    });
+});
+</script>
+
 
 <script>
   const images = [
