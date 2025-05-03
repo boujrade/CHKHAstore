@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>فأرة Logitech G Pro</title>
+  <style>
+    body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
+    .container {
+      max-width: 900px; margin: auto; background: #fff; padding: 20px;
+      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .gallery { position: relative; text-align: center; }
+    .gallery img {
+      width: 100%; max-height: 400px; border-radius: 10px; object-fit: contain;
+    }
+    .buttons button {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5); color: white; border: none;
+      padding: 10px; cursor: pointer; font-size: 20px;
+    }
+    .buttons .prev { left: 10px; }
+    .buttons .next { right: 10px; }
+
+    .desc { margin-top: 20px; font-size: 1.1em; color: #333; line-height: 1.6; text-align: right; }
+    .price { font-size: 2em; color: #111; margin: 20px 0; }
+
+    .btns { display: flex; gap: 15px; margin-top: 20px; justify-content: flex-end; }
+    .btns button {
+      padding: 15px 25px; border: none; border-radius: 6px;
+      font-size: 1em; cursor: pointer;
+    }
+    .add-cart { background: #ffd814; }
+    .buy-now { background: #f08804; color: white; }
+  
+    .share-btn {
+      background: #ee780a;
+      color: #f5f3f1;
+      font-size: 13px;
+    }
+
+    .share-btn, .buy-btn, .cart-btn {
+    font-size: 18px; /* تكبير حجم النص */
+    padding: 12px 15px; /* زيادة المساحة داخل الزر */
+    width: 10%; /* جعل الزر يأخذ عرض العنصر الأب */
+    border-radius: 8px; /* تحسين الزوايا */
+}
+
+.buy-now button {
+    font-size: 28px; /* تكبير حجم النص */
+    padding: 12px 28px; /* توسيع المساحة داخل الزر */
+    background-color: #ff7300; /* لون برتقالي مميز */
+    color: white; /* لون النص */
+    border: 3px solid #e68900; /* إضافة إطار برتقالي داكن */
+    border-radius: 10px; /* زوايا ناعمة */
+    font-weight: bold; /* جعل النص أكثر وضوحًا */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.buy-now button:hover {
+    background: #00e660; /* تغيير لون الخلفية عند التفاعل */
+    transform: scale(1.3); /* تكبير الزر عند تمرير الماوس */
+    font-size: 27px; /* تكبير حجم النص */
+}
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>فأرة Logitech G Pro اللاسلكية</h2>
+  <div class="gallery">
+    <img id="mainImage" src="images/produits/html.04.jpg" alt="فأرة Logitech G Pro" loading="lazy"  >
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div>
+
+  <div class="price" style="color: rgb(121, 121, 113); font-size: 18px; font-weight: bold;">DA 1900 DZD</div>
+
+  <div class="desc">
+    فأرة لاسلكية مخصصة للاعبين المحترفين بتقنية **LIGHTSPEED** للاتصال السريع.<br>
+    مستشعر **HERO 25K** بدقة عالية وسرعة استجابة لا مثيل لها.<br>
+    تصميم خفيف الوزن (80 جرام فقط) مع قبضة مريحة للاستخدام المطول.<br>
+    <span style="color: rgb(235, 219, 5);">★★★★★</span> تقييم –   4.8/5.
+  </div>
+
+  
+
+  <div class="desc" style="font-size: 14px; line-height: 1.6;">
+    <h3>🎮 المواصفات التقنية</h3>
+    <ul>
+      <li><strong>نوع الاتصال:</strong> لاسلكية عبر تقنية LIGHTSPEED</li>
+      <li><strong>المستشعر:</strong> HERO 25K بدقة تصل إلى 25,600 DPI</li>
+      <li><strong>عدد الأزرار:</strong> 6 أزرار قابلة للتخصيص</li>
+      <li><strong>الوزن:</strong> خفيفة جدًا – حوالي 80 غرام</li>
+      <li><strong>الإضاءة:</strong> إضاءة RGB قابلة للتخصيص عبر Logitech G HUB</li>
+      <li><strong>عمر البطارية:</strong> حتى 60 ساعة بدون إضاءة</li>
+      <li><strong>التصميم:</strong> مخصص للاعبين المحترفين – تصميم متماثل مناسب لليد اليمنى واليسرى</li>
+    </ul>
+  
+    <h3>✅ المميزات البارزة</h3>
+    <ul>
+      <li><strong> دقة عالية:</strong> مستشعر HERO يمنحك أداء تتبع دقيق بدون تسريع أو تصحيح تلقائي.</li>
+      <li><strong> زمن استجابة منخفض:</strong> تقنية LIGHTSPEED تقدم استجابة أسرع من الاتصال السلكي.</li>
+      <li><strong> إضاءة قابلة للتخصيص:</strong> RGB متزامن مع إعدادات اللعبة عبر G HUB.</li>
+      <li><strong>وزن خفيف:</strong> يناسب الألعاب التنافسية ويقلل من إجهاد اليد.</li>
+      <li><strong>بطارية تدوم طويلاً:</strong> عمر بطارية ممتاز لجلسات اللعب الطويلة.</li>
+    </ul>
+  
+
+  <div class="btns">
+
+    <button class="share-btn" onclick="shareProduct('فأرة Logitech G Pro')">🔗 مشاركة</button>
+    <button class="add-cart">أضف إلى السلة</button>
+    <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
+    
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+
+<script>
+    const images = [
+    "images/produits/html.04.jpg",
+      "images/produits/html.004.jpg",
+      "images/produits/html.0004.jpg",
+      "images/produits/html.00004.jpg",
+      
+    ];
+    let index = 0;
+    const img = document.getElementById("mainImage");
+  
+    function nextImage() {
+      index = (index + 1) % images.length;
+      img.src = images[index];
+    }
+  
+    function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      img.src = images[index];
+    }
+  </script>
+
+<script>
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
+
+  function goToDetails(name) {
+    alert(`سيتم توجيهك إلى صفحة تفاصيل: ${name} (مثال فقط)`);
+    // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
+  }
+</script>
+
+</body>
+</html>
