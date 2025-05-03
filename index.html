@@ -274,26 +274,31 @@ body {
 
     /* البطاقات */
     .card {
-      border: none;
-      border-radius: 0px;
-      background: var(--card-bg);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-    }
-    .card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-    }
-    .product-img {
-      height: 220px;
-      object-fit: cover;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-    }
-    .product-card img {
-    max-width: 100%;
-    height: auto;
+  min-width: 180px; /* حجم البطاقة */
+  height: 600px;
+  background: white;
+  border-radius: 0px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* ظل أسود ساطع */
+  border: 1px solid black; /* خط أسود رقيق */
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* زيادة السطوع عند التحويم */
+}
+
+/* الأسعار */
+.price {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.old-price {
+  color: #a0aec0;
+  text-decoration: line-through;
 }
 
 .lazy-img {
@@ -304,6 +309,11 @@ body {
 .lazy-img.loaded {
     opacity: 1;
 }
+
+
+
+
+
     
     /* الأسعار */
     .price {
@@ -462,7 +472,124 @@ button {
     right: 10px;
 }
 
+/* شريط التشبيح */
+.skeleton-bar {
+  width: 100%;
+  height: 15px;
+  background: linear-gradient(90deg, #f5d89b 25%, #f7afaf 50%, #e0e0e0 75%);
+  background-size: 200% 10%;
+  
+  border-radius: 5px;
+}
 
+/* تأثير التحميل */
+@keyframes loadingAnimation {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+
+.divider {
+  width: 80%;
+  height: 1px;
+  background-color: #d6a769;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+.loading-bar {
+  width: 100%;
+  height: 2px;
+  background-color: #ff9100; /* برتقالي */
+  border-radius: 5px;
+}
+
+/* البطاقات الأفقية تحويل*/
+
+/* الحاوية الخاصة بالتمرير الأفقي */
+.special-card-container {
+  display: flex;
+  overflow-x: auto; /* تمكين التمرير الأفقي */
+  gap: 5px; /* تقليل المسافة بين البطاقات */
+  padding: 10px;
+  scrollbar-width: thin;
+  justify-content: start; /* الترتيب من اليسار لليمين */
+}
+
+/* تحسين شريط التمرير */
+.special-card-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.special-card-container::-webkit-scrollbar-thumb {
+  background-color: #f08804;
+  border-radius: 10px;
+}
+
+/* ضبط حجم البطاقات */
+.special-card {
+  min-width: 150px; /* عرض محدد */
+  height: 250px; /* ارتفاع محدد */
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تحسين الصور داخل البطاقات */
+.special-card img {
+  width: 100%;
+  height: 100px; /* ضبط حجم الصورة */
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* تأثير عند التحويم */
+.special-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.elegant-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f08804; /* لون عصري */
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  background: linear-gradient(90deg, #d6a769, #ff9100);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.elegant-title {
+  font-size: 2.5rem; /* حجم أكبر لعنوان مميز */
+  font-weight: bold;
+  color: #3a2d24; /* لون كلاسيكي داكن */
+  text-align: center;
+  font-family: 'Playfair Display', serif; /* خط كلاسيكي عصري */
+  padding: 12px;
+  position: relative;
+  background: linear-gradient(90deg, #d6a769, #ff9100);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* سطر مزخرف بأسلوب كلاسيكي */
+.elegant-title::after {
+  content: "▬▬▬▬ ✧ ✦ ✧ ▬▬▬▬";
+  font-size: 1.5rem;
+  color: #f1d987;
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  font-family: 'Cormorant Garamond', serif;
+}
 
   </style>
 </head>
@@ -489,6 +616,8 @@ button {
           
 
 <!-- القائمة الجانبية -->
+
+
 <div id="sidebar" class="sidebar">
   <button id="close-sidebar" class="close-btn">✖</button>
 
@@ -508,7 +637,12 @@ button {
       </nav>   
       </div>
     </div>
-  </nav> <br>
+  </nav> 
+ 
+
+<div class="skeleton-bar"></div>
+<div class="loading-bar"></div>
+
 
 <!-- نص متحرك تحت شريط التنقل -->
 
@@ -629,11 +763,55 @@ button {
 </div><br>
  
 
-<p>✨ لعرض المزيد من منتجاتنا انتقل الى القائمة</p>
+<h2 class="elegant-title"> إليك بعض من منتجاتنا المميزة</h2>
 
-
-
-
+<div class="special-card-container">
+  <div class="special-card" onclick="window.location.href='page1.html'">
+    <img src="product1.jpg" alt="منتج 1">
+  </div>
+  <div class="special-card" onclick="window.location.href='page2.html'">
+    <img src="product2.jpg" alt="منتج 2">
+  </div>
+  <div class="special-card" onclick="window.location.href='page3.html'">
+    <img src="product3.jpg" alt="منتج 3">
+  </div>
+  <div class="special-card" onclick="window.location.href='page4.html'">
+    <img src="product4.jpg" alt="منتج 4">
+  </div>
+  <div class="special-card" onclick="window.location.href='page5.html'">
+    <img src="product5.jpg" alt="منتج 5">
+  </div>
+  <div class="special-card" onclick="window.location.href='page6.html'">
+    <img src="product6.jpg" alt="منتج 6">
+  </div>
+  <div class="special-card" onclick="window.location.href='page7.html'">
+    <img src="product7.jpg" alt="منتج 7">
+  </div>
+  <div class="special-card" onclick="window.location.href='page8.html'">
+    <img src="product8.jpg" alt="منتج 8">
+  </div>
+  <div class="special-card" onclick="window.location.href='page9.html'">
+    <img src="product9.jpg" alt="منتج 9">
+  </div>
+  <div class="special-card" onclick="window.location.href='page10.html'">
+    <img src="product10.jpg" alt="منتج 10">
+  </div>
+  <div class="special-card" onclick="window.location.href='page11.html'">
+    <img src="product11.jpg" alt="منتج 11">
+  </div>
+  <div class="special-card" onclick="window.location.href='page12.html'">
+    <img src="product12.jpg" alt="منتج 12">
+  </div>
+  <div class="special-card" onclick="window.location.href='page13.html'">
+    <img src="product13.jpg" alt="منتج 13">
+  </div>
+  <div class="special-card" onclick="window.location.href='page14.html'">
+    <img src="product14.jpg" alt="منتج 14">
+  </div>
+  <div class="special-card" onclick="window.location.href='page15.html'">
+    <img src="product15.jpg" alt="منتج 15">
+  </div>
+</div>
 
 
 <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"   loading="lazy"   ><br>
