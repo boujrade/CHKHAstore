@@ -1,168 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>حقيبة الضهر</title>
-  <style>
-    body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
-    .container {
-      max-width: 900px; margin: auto; background: #fff; padding: 20px;
-      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .gallery { position: relative; text-align: center; }
-    .gallery img {
-      width: 100%; max-height: 400px; border-radius: 10px; object-fit: contain;
-    }
-    .buttons button {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.5); color: white; border: none;
-      padding: 10px; cursor: pointer; font-size: 20px;
-    }
-    .buttons .prev { left: 10px; }
-    .buttons .next { right: 10px; }
-
-    .desc { margin-top: 20px; font-size: 1.1em; color: #333; line-height: 1.6; text-align: right; }
-    .price { font-size: 2em; color: #111; margin: 20px 0; }
-
-    .btns { display: flex; gap: 15px; margin-top: 20px; justify-content: flex-end; }
-    .btns button {
-      padding: 15px 25px; border: none; border-radius: 6px;
-      font-size: 1em; cursor: pointer;
-    }
-    .add-cart { background: #ffd814; }
-    .buy-now { background: #f08804; color: white; }
-
-
-    .share-btn, .buy-btn, .cart-btn {
-    font-size: 18px; /* تكبير حجم النص */
-    padding: 12px 15px; /* زيادة المساحة داخل الزر */
-    width: 10%; /* جعل الزر يأخذ عرض العنصر الأب */
-    border-radius: 8px; /* تحسين الزوايا */
-}
-
-.buy-now button {
-    font-size: 28px; /* تكبير حجم النص */
-    padding: 12px 28px; /* توسيع المساحة داخل الزر */
-    background-color: #ff7300; /* لون برتقالي مميز */
-    color: white; /* لون النص */
-    border: 3px solid #e68900; /* إضافة إطار برتقالي داكن */
-    border-radius: 10px; /* زوايا ناعمة */
-    font-weight: bold; /* جعل النص أكثر وضوحًا */
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.buy-now button:hover {
-    background: #00e660; /* تغيير لون الخلفية عند التفاعل */
-    transform: scale(1.3); /* تكبير الزر عند تمرير الماوس */
-    font-size: 27px; /* تكبير حجم النص */
-}
-
-.share-btn , .buy-btn {
-      background: #ee780a;
-      color: #f5f3f1;
-      font-size: 13px;
-    }
-
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <h2> مروحة مكتبية ذكية – SmartDesk Fan S3</h2>
-    <div class="gallery">
-      <img id="mainImage" src="images/produits/html.09.jpg" loading="lazy"    >
-      <div class="buttons">
-        <button class="prev" onclick="prevImage()">❮</button>
-        <button class="next" onclick="nextImage()">❯</button>
-      </div>
-    </div>
-  
-    <div class="price" style="color: rgb(121, 121, 113); font-size: 18px; font-weight: bold;">DA 3600 DZD</div>
-  
-    <div class="desc">
-      مروحة مكتبية صغيرة الحجم، أنيقة، وذكية، تدعم التحكم <BR>عبر تطبيق الهاتف أو الأوامر الصوتية (Google Assistant / Alexa) <BR> توفر تهوية قوية وهادئة بفضل محركها عديم الفرشاة، وتعد مثالية للمكاتب أو غرف النوم.
-
-  <br>
-    
-      <span style="color: rgb(235, 219, 5);">★★★★★</span>  تقييم –  4.6/5.
-    </div>
-  
-    
-  
-    <div class="specs" style="margin-top: 15px;">
-      <h3 style="color: #333;">⚙️ المواصفات التقنية:</h3>
-      <ul style="padding-right: 20px;">
-        <li><strong> سرعات متعددة:</strong> 4 مستويات للسرعة (هادئة – متوسطة – عالية – توربو)</li>
-        <li><strong> تحكم ذكي:</strong> عبر تطبيق الهاتف أو الأوامر الصوتية</li>
-        <li><strong> زاوية دوران:</strong> 90° أفقياً، 45° عمودياً</li>
-        <li><strong> وضع توفير الطاقة:</strong> يعمل تلقائيًا وفق درجة حرارة الغرفة</li>
-        <li><strong> نوع الاتصال:</strong> USB-C + محول كهربائي</li>
-      </ul>
-    </div>
-  
-    <div class="features" style="margin-top: 15px;">
-      <h3 style="color: #333;">✅ المميزات البارزة:</h3>
-      <ul style="padding-right: 20px;">
-        <li>تشغيل صامت لا يسبب إزعاجًا أثناء النوم أو العمل</li>
-        <li>تصميم صغير ومناسب للطاولات والمكاتب</li>
-        <li>مؤقت تلقائي لإيقاف التشغيل (حتى 8 ساعات)</li>
-        <li>سهولة الفك والتنظيف</li>
-        <li>استهلاك طاقة منخفض</li>
-      </ul>
-    </div>
-    <div class="btns">
-      <button class="share-btn" onclick="shareProduct(' مروحة مكتبية ذكية – SmartDesk Fan S3')">🔗 مشاركة</button>
-      <button class="add-cart">أضف إلى السلة</button>
-      <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
-     
-    </div>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("img.lazy-img").forEach(img => {
-        img.src = img.dataset.src;
-        img.classList.add("loaded");
-    });
-});
-</script>
-
-
-<script>
-    const images = [
-    "images/produits/html.09.jpg",
-      "images/produits/html.009.jpg",
-      "images/produits/html.0009.jpg",
-      "images/produits/html.00009.jpg",
-      "images/produits/html.000009.jpg",
-    ];
-    let index = 0;
-    const img = document.getElementById("mainImage");
-  
-    function nextImage() {
-      index = (index + 1) % images.length;
-      img.src = images[index];
-    }
-  
-    function prevImage() {
-      index = (index - 1 + images.length) % images.length;
-      img.src = images[index];
-    }
-  </script>
-
-<script>
-  function shareProduct(name) {
-    const url = window.location.href;
-    if (navigator.share) {
-      navigator.share({
-        title: name,
-        text: `اطلع على هذا المنتج: ${name}`,
-        url: url
-      }).catch((err) => console.log("لم تتم المشاركة:", err));
-    } else {
-      alert("المشاركة غير مدعومة على هذا المتصفح.");
-    }
-  }
-</body>
-</html>
